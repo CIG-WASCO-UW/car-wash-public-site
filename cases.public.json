@@ -1,50 +1,50 @@
 {
   "meta": {
-    "snapshot_id": "staging-20260807T022618-bdd9ece7",
-    "previous_snapshot_id": "staging-20260807T010828-b1643ec7",
+    "snapshot_id": "staging-20260808T231110-5489df7d",
+    "previous_snapshot_id": "staging-20260807T022618-bdd9ece7",
     "dataset_version": "car-wash-v3-4",
-    "public_ui_fingerprint": "e3fb62e838b3855691566454b9fbe76f8819a02599223fcca16bb03133a85387",
-    "created_at": "2026-08-07T02:26:18.658279+00:00",
-    "activated_at": "2026-08-07T02:26:18.658279+00:00",
+    "public_ui_fingerprint": "7ed8ec282bbd383184d25c41c3748d2ab39d52d97c826105253c8ebaee22e469",
+    "created_at": "2026-08-08T23:11:10.943068+00:00",
+    "activated_at": "2026-08-08T23:11:10.943068+00:00",
     "case_count": 29,
     "release_profile": "INTERNAL_FULL",
     "asset_mode": "INTERNAL_REFERENCE_OR_GENERATED",
     "asset_generator_version": null,
     "approved_public_copy_hashes": {
-      "case-11c6d184d7c5": "32fe6c8ceef9021dae2db3ead7980188faf168e271f37b2049c47e550345f706",
-      "case-f1e1186726cc": "d26be410155ceb50050055d2883bdb7a2a1bef26fc5f45d8bbf543e85c6d53fa",
-      "case-ea09a24590a7": "fcad1401b54fe3778f0ee96898a6989959a78056ea02a49912af66653ab6bc27",
-      "case-f8d8e2679560": "aa0967f42c415e5e97d92326015bf9d84cd52a0162342e68e85a42f95fc66c44",
-      "case-202b933f7f34": "83d32925ac5b6f67ea0ee3ba462fdea142ab4446a3c11a088e6fd839a2301168",
-      "case-3a7082ea7b13": "3176d198f8fdf54727fc360296fb5c978d538e132f430a5346fc345597b03881",
-      "case-6d73f76fa8ce": "4a7987d30f114d0b1f51507ca995b949be9a86365734f829800852286eaa058f",
-      "case-1e466d65ac2d": "55dbad87901ba173e4ace0b6367a285f1e011208fd13da6d33295a25e0d990c7",
-      "case-e279bcc0f99e": "f3e200762950f6d8eb277e4d19271a525b0ba2febb54823c20c9c86768b8a963",
-      "case-22e5a21896c5": "f4a01a54fd5b26d30f99581470393dc471b3b5097f65c57dd131e5a72ec5fe68",
-      "case-379ca304e175": "9e0f3ce11910186f9248f8eda1cb8e2fb54df32b680006cc7bc16c2fa3419f87",
-      "case-83e297953024": "c986e6e218a37f8c74ad1746c9006cc29f3788bddbaf08a85f59d372e0cb7628",
-      "case-5a144b34bd8a": "7091d504525fbee59abf2565db95dc8e6abfd24315db87fc52ae16aa061bc879",
-      "case-f3631072d960": "07c13855125e04c02eb2f870f98adc0382f2280de9c3923daaf8cf75fb222cba",
-      "case-acd0bfa7d58b": "22c56ff19e48df3be1b050e0973257c7463d463a035dd05561814e002ecf8e66",
-      "case-84a5d7c35ef2": "dcc2b0758bb5b9ea98542a239445d9fc99124a58406e8077a3f6aab1e1c57b45",
-      "case-1e4e1b001b0b": "e20ff1ce3078eb3b74a11a7a7705b8d0e0887145d08ea4da4ddf33cedb4779e7",
-      "case-11c95c93520c": "68e1f8de63ab216007578cf8a6f32c0c02ad0f94978c9115a5960e415e58d968",
-      "case-936fc09f416c": "82497ed3a9dac407ceb93ab64aaa50419c3348f90a96746973bb2f8b8114e1bc",
+      "case-11c6d184d7c5": "40c2e457d73033d9ee6d769654d598fa3269ebe5cd1622646117f541c741cd2f",
+      "case-f1e1186726cc": "0c7693417ad45c39abd6ad0f2d787da28b5d49b02d18c4e9ce1783ff5b7e66be",
+      "case-ea09a24590a7": "23b01570b8f32ac902dbd30f5726281f97d0eba2c7e3b28f0bf440d6bd1fda53",
+      "case-f8d8e2679560": "212b7247c3478e34d042e4fda52d9745a26a85908936fa2400fd61074227cb68",
+      "case-202b933f7f34": "077ab69ffb3296136f35594d6a239e8ed8bc38926eb4ab3060222cdbc3543774",
+      "case-3a7082ea7b13": "6543bf5cff7be123cf9aa1930171660b63275c15c4208df1900bb02a166bdeab",
+      "case-6d73f76fa8ce": "59a79f429ecfa765928928b1c7dfe88ea454e7aee3187ee6a7a63212490a0174",
+      "case-1e466d65ac2d": "f0f10ef6a05248486000145282a27d1ff576f186bfd6638a262e1b51f3a121bb",
+      "case-e279bcc0f99e": "814903346c4b3121a3a5ac70999a6ecfaf898c152fa4f398dd2bef9aff7d3b50",
+      "case-22e5a21896c5": "f21f1cf9226abf97e8d343463c7a1505571e1f502b2132a8f5fa522a7600f542",
+      "case-379ca304e175": "e92a008da79d1349c53e0c580139f8123abf53198151f19929d15895c07c1504",
+      "case-83e297953024": "9b480a51c19876f36facd4378238e506860708c1578eba372669f250252da9e0",
+      "case-5a144b34bd8a": "cdefe9cf2f52aa9172a08bce7930d8fc3b8142daf67280d9637337b0695bb298",
+      "case-f3631072d960": "09b4027bd1b47ba11306eed36c84dd4b57c02ea05cf240059702618d96021a77",
+      "case-acd0bfa7d58b": "d4494436fd58f977d67e0a85b29a5ae9d3220fcd934c297858ba64b635d05ac1",
+      "case-84a5d7c35ef2": "b9e7fcc552f8d5571045453a455b0de7392c052b4430db0903b732f69c129412",
+      "case-1e4e1b001b0b": "ce541f6926df76df4a97632c70e62b42ee20f1880de467870862d42e57aff605",
+      "case-11c95c93520c": "e7682d72e4300c784b9da6a0a1d8a601079736e4166daafdfcc77454e1b3473a",
+      "case-936fc09f416c": "f2a68a0dd0a161f98ce1a71b448613f63b3035e88172c0f4f9880107029383a4",
       "case-2114bfaec551": "3a3fcfd380897ed14d68648ba1f1034880c54635f0a786a10af9474afdf851fb",
-      "case-112329203063": "bfa3f901bcc00296262067c7c683958dcc2e87e3e5e30ad3aa2aa6a3147ffb24",
-      "case-ea1028ed5e0f": "cd8cbacb77f3391bef330cd6eb80081e00e5a34a9019aaf6871c49cac38c2d25",
-      "case-b26dd75b2d51": "96a7010cf082da710cecb21206156036f2cdd19ec06ad599177db0dd4ba68b3d",
-      "case-487646af05ed": "b89c9c145977935857560e2a96f42eec53396a9c62db73d06e25dab01fe1ba27",
-      "case-692e73b7e651": "7e356a2c3dcc4c31bee5b56f2fc6bddd232b2240df281bf87aed2dbfb93fd399",
+      "case-112329203063": "7dbb5b2831494f07ae219ededa0fab3acf9f4e747b3803ccedec9e8d5619198c",
+      "case-ea1028ed5e0f": "087ecded7d13ac5001801353cecee13dde56c199ba09637420f86b3d6bd1ecc3",
+      "case-b26dd75b2d51": "a593bd45c11bd31f657e8f95164ca26e598e04be5ee4b8d4fc6f15875229a81f",
+      "case-487646af05ed": "f718027a1748af946c13a4b6d405fc9544148a8ed6c211bc1a1a8fc707c1d3d6",
+      "case-692e73b7e651": "dec6ef818a35f9dab8a937dd9092ddb9f8dbabf6559bea68186088ada23d4c9d",
       "case-4ede7f783a7c": "627fc500d253188161946cb83c171f1285de2e70980e23214a863f1c77fd9336",
       "case-65449b839105": "d6c08396458ad91473ffdb2354210af887dddb9f31a60152a0f762634b03e207",
-      "case-d3a63b579b60": "bfbaa8b8c5cef110e8e8288f8974be1c7efaedb3432e61a67fd819d2eab71850",
-      "case-032bdd50d15c": "131abc1326e414e1a5c09ecd7de7bf54c83ceaf5ba3d5cd164040fa0732b5fcb"
+      "case-d3a63b579b60": "22f52b5ca00be08b1ae44c0b2b86a1fa25860798feaa5b5a082529ffe951005e",
+      "case-032bdd50d15c": "a805964112ee68367c36f621bd4a2407790bf4f2b6dc25abbd870069ee72728f"
     },
     "visibility": "local-editorial-preview-only",
     "production_deployment": "DISABLED",
     "approval_boundary": "Internal editorial preview only; human review and publication approval are still required.",
-    "source_commit_sha": "0000000000000000000000000000000000000000",
+    "source_commit_sha": "48cdd08692e7ec974118b350b7d29fe60151e053",
     "public_schema_version": "public-case-copy-v1",
     "taxonomy_version": "case-taxonomy-v1",
     "render_mode": "INTERNAL_STAGING",
@@ -82,8 +82,8 @@
       "footer_heading": "CAR-WASH Case Study Repository",
       "footer_summary": "Human-reviewed research staging for WASCO/CIG discussion."
     },
-    "site_revision_id": null,
-    "site_revision_hash": null,
+    "site_revision_id": "site-revision-8ce2c6155b93f709",
+    "site_revision_hash": "8ce2c6155b93f709250357e46523f331242a4dc7a32f99777358804ec452e03c",
     "exact_case_versions": {
       "case-032bdd50d15c9f65": "case-032bdd50d15c9f65-v-2c8758356180",
       "case-11c6d184d7c59fbc": "case-11c6d184d7c59fbc-v-3ba7a5e6c6bd",
@@ -129,12 +129,12 @@
       "slug": "case-11c6d184d7c5",
       "collection": "Washington and Pacific Northwest",
       "last_source_checked_at": "",
-      "summary": "In Washington, Project partners leads the documented adaptation work. The adaptation action requires source repair. The cited source documents the project context and implementation approach. It should not be read as evidence that the same results will occur in another community, watershed, utility, or institutional setting.",
+      "summary": "The current source record does not provide a concise climate-mechanism statement. The current source record does not provide a verified outcome statement for public use.",
       "adaptation_action": "",
       "reported_outcomes": "The current source record does not provide a verified outcome statement for public use.",
-      "transferability": "Transfer considerations require case-specific human review.",
+      "transferability": "Transferability depends on local climate, governance, funding, and implementation conditions.",
       "limitations": "The source documents the action and its implementation context. It does not by itself establish broader effectiveness or outcomes beyond the reported evidence.",
-      "climate_mechanism": "Climate mechanism wording requires source-grounded human review.",
+      "climate_mechanism": "The current source record does not provide a concise climate-mechanism statement.",
       "hazards": [
         "FLOODING_HEAVY_PRECIPITATION"
       ],
@@ -142,16 +142,15 @@
         "WASHINGTON_STATEWIDE"
       ],
       "location_types": [
-        "WATERSHED_BASIN"
+        "REGIONAL"
       ],
-      "geographic_scale": "COMMUNITY",
+      "geographic_scale": "REGIONAL",
       "themes": [
         "WATER",
-        "INFRASTRUCTURE_ENERGY",
-        "COMMUNITY_RESILIENCE"
+        "INFRASTRUCTURE_ENERGY"
       ],
       "adaptation_strategies": [
-        "COMMUNITY_ENGAGEMENT_CAPACITY_BUILDING"
+        "ASSESSMENT_PLANNING"
       ],
       "implementation_stage": "Planning and design",
       "lead_organization_types": [
@@ -183,7 +182,7 @@
     },
     {
       "title": "Seattle RainWise Residential Stormwater Retrofits",
-      "summary": "In Seattle, Washington, Project partners rebates and approved-contractor support for rain gardens and cisterns on eligible private properties. Heavy rainfall and stormwater entering combined sewer infrastructure can contribute to polluted overflows. Project records place the work in the implement stage. Internal field-beta inclusion only; source support, outcomes, sensitive wording, and technical claims remain human-review gated. The cited source documents the project context and implementation approach. It should not be read as evidence that the same results will occur in another community, watershed, utility, or institutional setting.",
+      "summary": "In Seattle, Washington, the source describes this adaptation action: Rebates and approved-contractor support for rain gardens and cisterns on eligible private properties. Heavy rainfall and stormwater entering combined sewer infrastructure can contribute to polluted overflows. Project records place the work in the implement stage. The source documents the action and its implementation context. It does not by itself establish broader effectiveness or outcomes beyond the reported evidence.",
       "location": "Seattle, Washington",
       "region": "Seattle, Washington",
       "hazards": [
@@ -191,33 +190,30 @@
       ],
       "themes": [
         "WATER",
-        "INFRASTRUCTURE_ENERGY",
-        "COMMUNITY_RESILIENCE"
+        "INFRASTRUCTURE_ENERGY"
       ],
       "climate_mechanism": "Heavy rainfall and stormwater entering combined sewer infrastructure can contribute to polluted overflows.",
       "adaptation_action": "Rebates and approved-contractor support for rain gardens and cisterns on eligible private properties.",
       "implementation_stage": "Implementation",
       "stage_note": "Original source wording: implementing / ongoing program.",
-      "limitations": "Internal field-beta inclusion only; source support, outcomes, sensitive wording, and technical claims remain human-review gated.",
+      "limitations": "The source documents the action and its implementation context. It does not by itself establish broader effectiveness or outcomes beyond the reported evidence.",
       "last_source_checked_at": "2026-07-22",
       "collection": "Washington and Pacific Northwest",
       "source_url": "https://seattlerainwise.org/",
       "public_id": "case-f1e1186726cc",
       "slug": "case-f1e1186726cc",
       "reported_outcomes": "The current source record does not provide a verified outcome statement for public use.",
-      "transferability": "Internal field-beta inclusion only; source support, outcomes, sensitive wording, and technical claims remain human-review gated.",
+      "transferability": "Transferability depends on local climate, governance, funding, and implementation conditions.",
       "region_tags": [
         "PUGET_SOUND"
       ],
       "location_types": [
-        "URBAN",
-        "WATERSHED_BASIN"
+        "URBAN"
       ],
-      "geographic_scale": "COMMUNITY",
+      "geographic_scale": "CITY_COUNTY",
       "adaptation_strategies": [
         "NATURE_BASED_RESTORATION_GREEN_INFRASTRUCTURE",
         "BUILT_INFRASTRUCTURE_RETROFIT",
-        "COMMUNITY_ENGAGEMENT_CAPACITY_BUILDING",
         "FINANCIAL_PROGRAM_INCENTIVE"
       ],
       "lead_organization_types": [
@@ -239,7 +235,7 @@
       "display_order": 1,
       "asset_filename": "case-f1e1186726cc-seattle-rainwise-rain-garden.jpg",
       "asset_alt": "A resident standing in front of a RainWise rain garden at a Seattle home.",
-      "asset_attribution": "Image and description from the RainWise controlling-source page; photographer and downstream reuse rights require confirmation. Internal review only.",
+      "asset_attribution": "Image and description from the RainWise controlling-source page; photographer and downstream reuse rights require confirmation.",
       "asset_license": "NOT_VERIFIED",
       "asset_width": 1024,
       "asset_height": 683,
@@ -282,7 +278,7 @@
     },
     {
       "title": "Tulalip Beaver Relocation",
-      "summary": "In Upper Snohomish / Skykomish watershed, Washington, Project partners relocate nuisance beavers from developed areas to hydrologically impaired tributaries or public land to support fish habitat and water storage. supporting source explicitly links relocation to warming and drying climate; use qualified mechanism wording. Project records place the work in the monitor stage. Historical relocation and wildlife-camera monitoring are reported in the supporting source. No independent measured project outcome identified. Nation-led ecosystem and hydrologic restoration example. The source reports project information, but this record does not establish that the same outcomes will occur in other places or under different conditions.",
+      "summary": "In Upper Snohomish / Skykomish watershed, Washington, the source describes this adaptation action: Relocate nuisance beavers from developed areas to hydrologically impaired tributaries or public land to support fish habitat and water storage. supporting source explicitly links relocation to warming and drying climate; use qualified mechanism wording. Project records place the work in the monitor stage. Historical relocation and wildlife-camera monitoring are reported in the supporting source. No independent measured project outcome identified. Nation-led ecosystem and hydrologic restoration example. The source reports project information, but this record does not establish that the same outcomes will occur in other places or under different conditions.",
       "location": "Upper Snohomish / Skykomish watershed, Washington",
       "region": "Upper Snohomish / Skykomish watershed, Washington",
       "hazards": [
@@ -341,7 +337,7 @@
       "display_order": 2,
       "asset_filename": "case-ea09a24590a7-tulalip-beaver-relocation-habitat.jpg",
       "asset_alt": "Tulalip Natural Resources image showing the top of a beaver lodge in a wetland habitat.",
-      "asset_attribution": "Image and description from Tulalip Natural Resources; Tribal-led wording, creator credit, and downstream reuse require named human review. Internal review only.",
+      "asset_attribution": "Image and description from Tulalip Natural Resources; Tribal-led wording, creator credit, and downstream reuse require named human review.",
       "asset_license": "NOT_VERIFIED",
       "asset_width": 2560,
       "asset_height": 500,
@@ -384,7 +380,7 @@
     },
     {
       "title": "Swinomish Kiket Island Clam Garden",
-      "summary": "In Kiket Island, Swinomish Reservation, Washington, Project partners community-based biocultural clam-garden restoration using rock-terrace construction and tending. source explicitly links the project to sea-level rise and ocean acidification. Project records place the work in the monitor stage. Construction began; long-term monitoring initiated. No measured project outcome identified. Nation-led biocultural and nature-based coastal adaptation. Measured ecological/cultural outcomes, private cultural knowledge, or generalized transferability.",
+      "summary": "In Kiket Island, Swinomish Reservation, Washington, the source describes this adaptation action: Community-based biocultural clam-garden restoration using rock-terrace construction and tending. source explicitly links the project to sea-level rise and ocean acidification. Project records place the work in the monitor stage. Construction began; long-term monitoring initiated. No measured project outcome identified. Nation-led biocultural and nature-based coastal adaptation. Measured ecological/cultural outcomes, private cultural knowledge, or generalized transferability.",
       "location": "Kiket Island, Swinomish Reservation, Washington",
       "region": "Kiket Island, Swinomish Reservation, Washington",
       "hazards": [
@@ -444,7 +440,7 @@
       "display_order": 3,
       "asset_filename": "case-f8d8e2679560-swinomish-kiket-island-clam-garden.jpg",
       "asset_alt": "Swinomish Fisheries image from the Kiket Island clam-garden project page.",
-      "asset_attribution": "Image from the Swinomish Fisheries clam-garden page; Nation-led wording, creator credit, and downstream reuse require named human review. Internal review only.",
+      "asset_attribution": "Image from the Swinomish Fisheries clam-garden page; Nation-led wording, creator credit, and downstream reuse require named human review.",
       "asset_license": "NOT_VERIFIED",
       "asset_width": 498,
       "asset_height": 280,
@@ -471,7 +467,7 @@
     },
     {
       "title": "Quinault Taholah Village Relocation",
-      "summary": "In Taholah, Quinault Indian Nation, Washington, Project partners plan phased relocation of Taholah Village to higher ground to address coastal and river-flooding risks. coastal/river flooding and storm-surge exposure are documented; tsunami/earthquake hazards must remain separate. Project records place the work in the implement stage. Master-plan adoption and phased relocation planning. No measured relocation outcome identified. Nation-led relocation and long-horizon planning. Completed relocation, guaranteed protection, or mixing tsunami/earthquake hazards into the climate claim.",
+      "summary": "In Taholah, Quinault Indian Nation, Washington, the source describes this adaptation action: Plan phased relocation of Taholah Village to higher ground to address coastal and river-flooding risks. coastal/river flooding and storm-surge exposure are documented; tsunami/earthquake hazards must remain separate. Project records place the work in the implement stage. Master-plan adoption and phased relocation planning. No measured relocation outcome identified. Nation-led relocation and long-horizon planning. Completed relocation, guaranteed protection, or mixing tsunami/earthquake hazards into the climate claim.",
       "location": "Taholah, Quinault Indian Nation, Washington",
       "region": "Taholah, Quinault Indian Nation, Washington",
       "hazards": [
@@ -531,7 +527,7 @@
       "display_order": 4,
       "asset_filename": "case-202b933f7f34-quinault-taholah-project-background.jpg",
       "asset_alt": "Coastal landscape and buildings shown on the Quinault Indian Nation Taholah project-background page.",
-      "asset_attribution": "Image from the Quinault Indian Nation project-background page; Nation-led wording, creator credit, and downstream reuse require named human review. Internal review only.",
+      "asset_attribution": "Image from the Quinault Indian Nation project-background page; Nation-led wording, creator credit, and downstream reuse require named human review.",
       "asset_license": "NOT_VERIFIED",
       "asset_width": 794,
       "asset_height": 284,
@@ -558,7 +554,7 @@
     },
     {
       "title": "Lower Toppenish Creek Fish Passage Restoration",
-      "summary": "In Lower Toppenish Creek, Washington, Project partners develop fish-passage restoration at Lower Toppenish Creek; source page lists the project as In Development. Unresolved evidence: source supports a restoration project but does not directly connect the project to a climate mechanism; G3 cannot pass. Project records place the work in the assess stage. Planned restoration scope; In Development status. No measured outcome identified. Fish-passage action needing direct climate-mechanism evidence. Completed acreage/outcomes, climate adaptation claim without direct evidence, or earthquake/geologic framing.",
+      "summary": "In Lower Toppenish Creek, Washington, the source describes this adaptation action: Develop fish-passage restoration at Lower Toppenish Creek; source page lists the project as In Development. Unresolved evidence: source supports a restoration project but does not directly connect the project to a climate mechanism; G3 cannot pass. Project records place the work in the assess stage. Planned restoration scope; In Development status. No measured outcome identified. Fish-passage action needing direct climate-mechanism evidence. Completed acreage/outcomes, climate adaptation claim without direct evidence, or earthquake/geologic framing.",
       "location": "Lower Toppenish Creek, Washington",
       "region": "Lower Toppenish Creek, Washington",
       "hazards": [
@@ -613,7 +609,7 @@
       "display_order": 5,
       "asset_filename": "case-3a7082ea7b13-lower-toppenish-fish-passage-reference.jpeg",
       "asset_alt": "A channel-spanning culvert that allows fish and floodwater to pass under a road, used as a fish-passage reference image.",
-      "asset_attribution": "USFWS photo by Katrina Liebich, linked from the controlling-source site; project-specific fit and downstream reuse require human confirmation. Internal review only.",
+      "asset_attribution": "USFWS photo by Katrina Liebich, linked from the controlling-source site; project-specific fit and downstream reuse require human confirmation.",
       "asset_license": "NOT_VERIFIED",
       "asset_width": 3659,
       "asset_height": 2444,
@@ -656,7 +652,7 @@
     },
     {
       "title": "Duwamish Valley Climate Resilience",
-      "summary": "In Duwamish Valley, Seattle, Washington, Project partners develop Duwamish Valley resilience-district work; narrow to one bounded action or site before scoring. Conditional evidence: climate-justice/resilience framing is broad; one hazard/action/site is required. Project records place the work in the assess stage. District program/work areas. No single intervention outcome identified. Place-based climate-justice and governance perspective. One-project, one-outcome, or generic climate-mechanism claims without a selected intervention.",
+      "summary": "In Duwamish Valley, Seattle, Washington, the source describes this adaptation action: Develop Duwamish Valley resilience-district work; narrow to one bounded action or site before scoring. Conditional evidence: climate-justice/resilience framing is broad; one hazard/action/site is required. Project records place the work in the assess stage. District program/work areas. No single intervention outcome identified. Place-based climate-justice and governance perspective. One-project, one-outcome, or generic climate-mechanism claims without a selected intervention.",
       "location": "Duwamish Valley, Seattle, Washington",
       "region": "Duwamish Valley, Seattle, Washington",
       "hazards": [
@@ -709,7 +705,7 @@
       "display_order": 6,
       "asset_filename": "case-6d73f76fa8ce-duwamish-valley-flood-barrier.jpg",
       "asset_alt": "Sandbags along the Duwamish River in South Park after December 2022 flooding, installed as a flood barrier.",
-      "asset_attribution": "Image and description from the City of Seattle Duwamish Valley Resilience District page; photographer and downstream reuse rights require confirmation. Internal review only.",
+      "asset_attribution": "Image and description from the City of Seattle Duwamish Valley Resilience District page; photographer and downstream reuse rights require confirmation.",
       "asset_license": "NOT_VERIFIED",
       "asset_width": 3953,
       "asset_height": 1955,
@@ -752,7 +748,7 @@
     },
     {
       "title": "Walla Walla Water 2050",
-      "summary": "In Walla Walla Basin, Washington, Project partners implement a basin-scale water-management strategy; select one bounded project or decision for a case card. PASS for drought/water-supply relevance; no single bounded physical project selected. Project records place the work in the implement stage. Final strategy and implementation framework. No basin-wide measured adaptation outcome identified. Drought, aquifer, snowpack, and basin-governance perspective. Measured water-security, drought, or water-supply outcomes without action-specific evidence.",
+      "summary": "In Walla Walla Basin, Washington, the source describes this adaptation action: Implement a basin-scale water-management strategy; select one bounded project or decision for a case card. PASS for drought/water-supply relevance; no single bounded physical project selected. Project records place the work in the implement stage. Final strategy and implementation framework. No basin-wide measured adaptation outcome identified. Drought, aquifer, snowpack, and basin-governance perspective. Measured water-security, drought, or water-supply outcomes without action-specific evidence.",
       "location": "Walla Walla Basin, Washington",
       "region": "Walla Walla Basin, Washington",
       "hazards": [
@@ -808,7 +804,7 @@
       "display_order": 7,
       "asset_filename": "case-1e466d65ac2d-walla-walla-streamflow-monitoring.jpg",
       "asset_alt": "A person standing in a creek measuring streamflow in eastern Washington.",
-      "asset_attribution": "Image and description from the Washington Department of Ecology controlling-source page; photographer and downstream reuse rights require confirmation. Internal review only.",
+      "asset_attribution": "Image and description from the Washington Department of Ecology controlling-source page; photographer and downstream reuse rights require confirmation.",
       "asset_license": "NOT_VERIFIED",
       "asset_width": 5152,
       "asset_height": 1312,
@@ -851,7 +847,7 @@
     },
     {
       "title": "Spokane Community Resilience Hub Network Pilot",
-      "summary": "In Spokane, Washington, Project partners develop a multi-hazard resilience-hub network pilot for heat, wildfire smoke, and service continuity. heat and wildfire smoke are explicit multi-hazard framing candidates. Project records place the work in the pilot stage. Pilot sites/model and planned engagement are reported. No measured outcome identified. Eastern Washington neighborhood heat/smoke pilot. Operational performance or measured heat, smoke, health, or resilience outcomes.",
+      "summary": "In Spokane, Washington, the source describes this adaptation action: Develop a multi-hazard resilience-hub network pilot for heat, wildfire smoke, and service continuity. heat and wildfire smoke are explicit multi-hazard framing candidates. Project records place the work in the pilot stage. Pilot sites/model and planned engagement are reported. No measured outcome identified. Eastern Washington neighborhood heat/smoke pilot. Operational performance or measured heat, smoke, health, or resilience outcomes.",
       "location": "Spokane, Washington",
       "region": "Spokane, Washington",
       "hazards": [
@@ -910,7 +906,7 @@
       "display_order": 8,
       "asset_filename": "case-e279bcc0f99e-spokane-resilience-hub-carl-maxey-center.jpg",
       "asset_alt": "Carl Maxey Center building diagram presented on Gonzaga University's Spokane resilience-hub network page.",
-      "asset_attribution": "Evidence image from Gonzaga University's controlling-source page; creator and downstream reuse rights require confirmation. Internal review only.",
+      "asset_attribution": "Evidence image from Gonzaga University's controlling-source page; creator and downstream reuse rights require confirmation.",
       "asset_license": "NOT_VERIFIED",
       "asset_width": 750,
       "asset_height": 429,
@@ -937,7 +933,7 @@
     },
     {
       "title": "Fire Adapted Methow Neighborhood Ambassador Program",
-      "summary": "In Methow Valley, Washington, Project partners neighborhood ambassador program provides education, guidance, resources, and volunteer-led engagement to motivate fire-adaptation strategies. wildfire risk and smoke/evacuation preparedness are explicit. Project records place the work in the implement stage. Education/guidance/resources; reported relationship/network building; planned WiRē study. No independent measured outcome identified. Community wildfire preparedness and neighborhood engagement. Demonstrated participation, effectiveness, wildfire loss reduction, verified behavior change, or independently measured outcomes.",
+      "summary": "In Methow Valley, Washington, the source describes this adaptation action: Neighborhood ambassador program provides education, guidance, resources, and volunteer-led engagement to motivate fire-adaptation strategies. wildfire risk and smoke/evacuation preparedness are explicit. Project records place the work in the implement stage. Education/guidance/resources; reported relationship/network building; planned WiRē study. No independent measured outcome identified. Community wildfire preparedness and neighborhood engagement. Demonstrated participation, effectiveness, wildfire loss reduction, verified behavior change, or independently measured outcomes.",
       "location": "Methow Valley, Washington",
       "region": "Methow Valley, Washington",
       "hazards": [
@@ -995,7 +991,7 @@
       "display_order": 9,
       "asset_filename": "case-22e5a21896c5-fire-adapted-methow-programs.jpg",
       "asset_alt": "Fire Adapted Methow Valley programs header showing a wildfire-resilience landscape and community context.",
-      "asset_attribution": "Image from the Fire Adapted Methow Valley programs page; photographer and downstream reuse rights require confirmation. Internal review only.",
+      "asset_attribution": "Image from the Fire Adapted Methow Valley programs page; photographer and downstream reuse rights require confirmation.",
       "asset_license": "NOT_VERIFIED",
       "asset_width": 1500,
       "asset_height": 750,
@@ -1038,7 +1034,7 @@
     },
     {
       "title": "Seattle Cool and Clean Air Library Upgrades",
-      "summary": "In University, Columbia, West Seattle, Queen Anne, and Fremont library branches, Seattle, Washington, Project partners upgrade five library branches with air conditioning, modern ventilation, and related electrical/mechanical work to serve as cooling centers. extreme heat and wildfire smoke are explicitly linked to cooling-center and filtered-air upgrades. Project records place the work in the assess stage. Five-branch project and branch-level design/bid/renovation statuses documented in 2025–2026 public materials. No measured health or resilience outcome identified. Public-facility heat and smoke adaptation with accessibility relevance. All five upgrades completed or operating as cooling centers, or measured health/resilience outcomes.",
+      "summary": "In University, Columbia, West Seattle, Queen Anne, and Fremont library branches, Seattle, Washington, the source describes this adaptation action: Upgrade five library branches with air conditioning, modern ventilation, and related electrical/mechanical work to serve as cooling centers. extreme heat and wildfire smoke are explicitly linked to cooling-center and filtered-air upgrades. Project records place the work in the assess stage. Five-branch project and branch-level design/bid/renovation statuses documented in 2025–2026 public materials. No measured health or resilience outcome identified. Public-facility heat and smoke adaptation with accessibility relevance. All five upgrades completed or operating as cooling centers, or measured health/resilience outcomes.",
       "location": "University, Columbia, West Seattle, Queen Anne, and Fremont library branches, Seattle, Washington",
       "region": "University, Columbia, West Seattle, Queen Anne, and Fremont library branches, Seattle, Washington",
       "hazards": [
@@ -1094,7 +1090,7 @@
       "display_order": 10,
       "asset_filename": "case-379ca304e175-seattle-cool-clean-air-library.jpg",
       "asset_alt": "Exterior of the Seattle Public Library University Branch, one of the branches identified for cooling upgrades.",
-      "asset_attribution": "Image and description from the City of Seattle Green Seattle page; photographer and downstream reuse rights require confirmation. Internal review only.",
+      "asset_attribution": "Image and description from the City of Seattle Green Seattle page; photographer and downstream reuse rights require confirmation.",
       "asset_license": "NOT_VERIFIED",
       "asset_width": 1024,
       "asset_height": 759,
@@ -1137,7 +1133,7 @@
     },
     {
       "title": "Olympia Sea Level Rise Response Plan",
-      "summary": "In Olympia, Washington, Project partners maintain a sea-level-rise response plan through current and five-year work plans and collaboration; do not collapse plan into one completed project. sea-level-rise exposure is explicit. Project records place the work in the implement stage. Plan and work-plan framework documented. No measured adaptation outcome identified in the controlling page. Municipal planning and governance without implying built protection. Completed physical protection, measured flood reduction, or deterministic future outcomes without action-specific evidence.",
+      "summary": "In Olympia, Washington, the source describes this adaptation action: Maintain a sea-level-rise response plan through current and five-year work plans and collaboration; do not collapse plan into one completed project. sea-level-rise exposure is explicit. Project records place the work in the implement stage. Plan and work-plan framework documented. No measured adaptation outcome identified in the controlling page. Municipal planning and governance without implying built protection. Completed physical protection, measured flood reduction, or deterministic future outcomes without action-specific evidence.",
       "location": "Olympia, Washington",
       "region": "Olympia, Washington",
       "hazards": [
@@ -1195,7 +1191,7 @@
       "display_order": 11,
       "asset_filename": "case-83e297953024-olympia-sea-level-rise-plan.jpg",
       "asset_alt": "Header image from Olympia's official sea-level-rise response planning page.",
-      "asset_attribution": "Image from the City of Olympia controlling-source page; photographer and downstream reuse rights require confirmation. Internal review only.",
+      "asset_attribution": "Image from the City of Olympia controlling-source page; photographer and downstream reuse rights require confirmation.",
       "asset_license": "NOT_VERIFIED",
       "asset_width": 1000,
       "asset_height": 455,
@@ -1238,7 +1234,7 @@
     },
     {
       "title": "North Cove Dynamic Revetment",
-      "summary": "In North Cove, Washington coast, Project partners site-specific dynamic revetment using cobble/rocks, with monitoring and adaptive management. bounded coastal erosion/flooding exposure and shoreline adaptation action. Project records place the work in the monitor stage. Dynamic revetment installed; monitoring/adaptive-management activities reported. Site monitoring observations reported; no universal effect estimate. Implemented coastal engineering with monitoring and adaptive management. Hazard elimination, guaranteed effectiveness, universal transferability, or Nation-led ownership.",
+      "summary": "In North Cove, Washington coast, the source describes this adaptation action: Site-specific dynamic revetment using cobble/rocks, with monitoring and adaptive management. bounded coastal erosion/flooding exposure and shoreline adaptation action. Project records place the work in the monitor stage. Dynamic revetment installed; monitoring/adaptive-management activities reported. Site monitoring observations reported; no universal effect estimate. Implemented coastal engineering with monitoring and adaptive management. Hazard elimination, guaranteed effectiveness, universal transferability, or Nation-led ownership.",
       "location": "North Cove, Washington coast",
       "region": "North Cove, Washington coast",
       "hazards": [
@@ -1296,7 +1292,7 @@
       "display_order": 12,
       "asset_filename": "case-5a144b34bd8a-north-cove-dynamic-revetment.jpg",
       "asset_alt": "View along the North Cove shoreline where a dynamic revetment demonstration was implemented.",
-      "asset_attribution": "Image from the Washington Coastal Hazards Resilience Network project page; photographer and downstream reuse rights require confirmation. Internal review only.",
+      "asset_attribution": "Image from the Washington Coastal Hazards Resilience Network project page; photographer and downstream reuse rights require confirmation.",
       "asset_license": "NOT_VERIFIED",
       "asset_width": 1080,
       "asset_height": 294,
@@ -1339,7 +1335,7 @@
     },
     {
       "title": "How Are We Safer Together?",
-      "summary": "In Victoria, Australia, Project partners risk-based fuel management-Used landscape-scale fire behavior modeling and community values to prioritize where and how to reduce fuels through planned burns or mechanical treatments. Community collaboration: Partnered with local governments and community members to co-design preparedness and response strategies through tailored outreach, local workshops, and shared decision-making; Behavioral insights research: Partnered with BehaviourWorks Australia to study what drives or inhibits household-level preparedness and to pilot behavior-change strategies; Smoke and health research: Collaborated with CSIRO, EPA Victoria, and BoM to assess the public health impacts of smoke and guide burn scheduling accordingly; Transparency and accountability: Developed public dashboards and reporting tools to communicate risk reduction efforts, trade-offs, and performance outcomes. Wildfire & Smoke. Project records place the work in the assess stage. The Safer Together program led to more targeted and transparent fuel management across Victoria, reducing bushfire risk while incorporating community values.",
+      "summary": "In Victoria, Australia, the source describes this adaptation action: Risk-based fuel management-Used landscape-scale fire behavior modeling and community values to prioritize where and how to reduce fuels through planned burns or mechanical treatments. Community collaboration: Partnered with local governments and community members to co-design preparedness and response strategies through tailored outreach, local workshops, and shared decision-making; Behavioral insights research: Partnered with BehaviourWorks Australia to study what drives or inhibits household-level preparedness and to pilot behavior-change strategies; Smoke and health research: Collaborated with CSIRO, EPA Victoria, and BoM to assess the public health impacts of smoke and guide burn scheduling accordingly; Transparency and accountability: Developed public dashboards and reporting tools to communicate risk reduction efforts, trade-offs, and performance outcomes. Wildfire & Smoke. Project records place the work in the assess stage.",
       "location": "Victoria, Australia",
       "region": "Victoria, Australia",
       "hazards": [
@@ -1360,7 +1356,7 @@
         "The Safer Together program led to more targeted and transparent fuel management across Victoria, reducing bushfire risk while incorporating community values. It improved collaboration between fire agencies, local governments, and residents, resulting in more trusted and effective preparedness efforts. Public-facing dashboards and risk models increased accountability, while behavioral insights research informed tailored strategies to boost household preparedness. The program also advanced understanding of smoke impacts, helping balance risk reduction with public health."
       ],
       "transferability": "Washington faces similar wildfire risks to Victoria, particularly in forested and wildland-urban interface areas. The Safer Together model offers valuable insights for the state’s climate resilience strategy, emphasizing risk-based, science-informed planning, community-centered engagement, and integration of public health considerations. By adopting similar approaches including behavioral science partnerships and transparent communication Washington can strengthen trust, equity, and effectiveness in its wildfire preparedness and response efforts.",
-      "limitations": "Internal field-beta inclusion only; legacy wording, outcomes, source currency, and technical claims require human review.",
+      "limitations": "The source reports project information, but this record does not establish that the same outcomes will occur in other places or under different conditions.",
       "collection": "Transferable Examples from Other Regions",
       "source_url": "https://www.safertogether.vic.gov.au/research-modelling-and-knowledge-application",
       "public_id": "case-f3631072d960",
@@ -1456,7 +1452,7 @@
     },
     {
       "title": "The People and the Fire Tree: Co-Designing a Bushfire Early Warning System",
-      "summary": "In Victoria, Australia, Project partners leads the documented adaptation work. The project used participatory co-design methods through five workshops with residents of a rural, fire-prone community in Victoria. Participants developed two systems: The Fire Tree—a visual tool for tracking fire threat levels—and The People System—a platform integrating official government resources with informal local communication networks. The collaboration involved researchers from Swinburne University’s Centre for Design Innovation and Centre for Social Impact, emphasizing lived experience, local insight, and institutional coordination. Wildfire & Smoke, Flooding. Project records place the work in the evaluate stage. The result was Bushfire, a prototype early-warning platform tailored to local needs and designed to strengthen both formal and informal communication. The project increased residents’ sense of agency and confidence in preparedness while creating a tool that bridges gaps between community response and institutional systems.",
+      "summary": "In Victoria, Australia, the source describes this adaptation action: The project used participatory co-design methods through five workshops with residents of a rural, fire-prone community in Victoria. Participants developed two systems: The Fire Tree—a visual tool for tracking fire threat levels—and The People System—a platform integrating official government resources with informal local communication networks. The collaboration involved researchers from Swinburne University’s Centre for Design Innovation and Centre for Social Impact, emphasizing lived experience, local insight, and institutional coordination. Wildfire & Smoke, Flooding. Project records place the work in the evaluate stage. The result was Bushfire, a prototype early-warning platform tailored to local needs and designed to strengthen both formal and informal communication. The project increased residents’ sense of agency and confidence in preparedness while creating a tool that bridges gaps between community response and institutional systems. It also produced design principles that can inform similar efforts across other vulnerable regions.",
       "location": "Victoria, Australia",
       "region": "Victoria, Australia",
       "hazards": [
@@ -1478,7 +1474,7 @@
         "The result was Bushfire, a prototype early-warning platform tailored to local needs and designed to strengthen both formal and informal communication. The project increased residents’ sense of agency and confidence in preparedness while creating a tool that bridges gaps between community response and institutional systems. It also produced design principles that can inform similar efforts across other vulnerable regions."
       ],
       "transferability": "As wildfires intensify across Washington, this case offers a model for community-based early warning systems that reflect local context and build public trust. Integrating community input with agency data, as done in Victoria, could help Washington better tailor alerts and preparedness tools, particularly for rural and Tribal communities. The emphasis on co-production, equity, and local communication networks aligns with Washington’s goals of inclusive, community-led climate adaptation.",
-      "limitations": "Internal field-beta inclusion only; legacy wording, outcomes, source currency, and technical claims require human review.",
+      "limitations": "The source reports project information, but this record does not establish that the same outcomes will occur in other places or under different conditions.",
       "collection": "Transferable Examples from Other Regions",
       "source_url": "https://www.ssoar.info/ssoar/bitstream/handle/document/99454/ssoar-up-2025-munoz_rivas_et_al-The_People_and_the_Fire.pdf;jsessionid=D7B1E6AAC375467E8E1CBAD7C4601857?sequence=1",
       "public_id": "case-acd0bfa7d58b",
@@ -1574,7 +1570,7 @@
     },
     {
       "title": "Quantifying & Visualizing Urban Heat in Portland through Community Depaving",
-      "summary": "In Portland, OR, Project partners remote sensing & data mapping; Collaborated with Depave, a nonprofit that engages communities in converting pavement to green spaces in vulnerable neighborhoods; Analyzed six case study locations to measure changes in LST after depaving, allowing real-world assessment of local interventions to quantify impact. Extreme Heat. Project records place the work in the adapt stage. Frontline communities identified-Mapped neighborhoods with both high temperature exposure and social vulnerability, emphasizing areas needing urgent attention; Depaving effectiveness-Demonstrated an average reduction of ~1 °F in surface temperature across depaved sites, highlighting quantifiable cooling benefits; Method development: Validated a replicable approach combining remote sensing and community intervention to assess and mitigate urban heat impacts. Washington cities like Seattle face similar challenges with urban heat and environmental inequities.",
+      "summary": "In Portland, OR, the source describes this adaptation action: Remote sensing & data mapping; Collaborated with Depave, a nonprofit that engages communities in converting pavement to green spaces in vulnerable neighborhoods; Analyzed six case study locations to measure changes in LST after depaving, allowing real-world assessment of local interventions to quantify impact. Extreme Heat. Project records place the work in the adapt stage. Frontline communities identified-Mapped neighborhoods with both high temperature exposure and social vulnerability, emphasizing areas needing urgent attention; Depaving effectiveness-Demonstrated an average reduction of ~1 °F in surface temperature across depaved sites, highlighting quantifiable cooling benefits; Method development: Validated a replicable approach combining remote sensing and community intervention to assess and mitigate urban heat impacts. Washington cities like Seattle face similar challenges with urban heat and environmental inequities.",
       "location": "Portland, OR",
       "region": "Portland, OR",
       "hazards": [
@@ -1593,7 +1589,7 @@
         "Frontline communities identified-Mapped neighborhoods with both high temperature exposure and social vulnerability, emphasizing areas needing urgent attention; Depaving effectiveness-Demonstrated an average reduction of ~1 °F in surface temperature across depaved sites, highlighting quantifiable cooling benefits; Method development: Validated a replicable approach combining remote sensing and community intervention to assess and mitigate urban heat impacts"
       ],
       "transferability": "Washington cities like Seattle face similar challenges with urban heat and environmental inequities. Adopting this study’s approach mapping social vulnerability, partnering with local nonprofits, and measuring the impact of interventions can help state and local planners prioritize heat adaptation strategies. By focusing on historically marginalized neighborhoods, this model supports healthier communities and advances environmental justice within broader climate resilience efforts.",
-      "limitations": "Internal field-beta inclusion only; legacy wording, outcomes, source currency, and technical claims require human review.",
+      "limitations": "The source reports project information, but this record does not establish that the same outcomes will occur in other places or under different conditions.",
       "collection": "Washington and Pacific Northwest",
       "source_url": "https://ntrs.nasa.gov/api/citations/20230013297/downloads/2023Sum_VEJ_PortlandUrban_TechPaper_V2.pdf",
       "public_id": "case-84a5d7c35ef2",
@@ -1690,7 +1686,7 @@
     },
     {
       "title": "Chicago Uses Green Infrastructure to Reduce Extreme Heat",
-      "summary": "In Chicago, IL, Project partners climate vulnerability assessment; Introduced green roofs, cool roofs (EPA Energy Star standards), and expanded tree canopy via incentives like expedited permits and tax-funded grants; Partnered with the Field Museum and CDC to target outreach in vulnerable, predominantly Black neighborhoods, raising awareness and building preparedness; Updated heat-response protocols, established cooling centers (e.g., libraries), expanded Notify Chicago alerts. Extreme Heat, Flooding. Project records place the work in the adapt stage. Data-driven targeting led to investments in green and cool infrastructure across the city’s heat-prone zones; Thousands of trees, cool roofs, and green roofs were installed—green roofs now feature on City Hall and commercial buildings; Heat-resilient planning was institutionalized in Chicago’s 2008 Climate Action Plan and Cook County’s Hazard Mitigation strategy; Increased community awareness and capacity to respond to heat emergencies, especially in at-risk neighborhoods.",
+      "summary": "In Chicago, IL, the source describes this adaptation action: Climate vulnerability assessment; Introduced green roofs, cool roofs (EPA Energy Star standards), and expanded tree canopy via incentives like expedited permits and tax-funded grants; Partnered with the Field Museum and CDC to target outreach in vulnerable, predominantly Black neighborhoods, raising awareness and building preparedness; Updated heat-response protocols, established cooling centers (e.g., libraries), expanded Notify Chicago alerts. Extreme Heat, Flooding. Project records place the work in the adapt stage. Data-driven targeting led to investments in green and cool infrastructure across the city’s heat-prone zones; Thousands of trees, cool roofs, and green roofs were installed—green roofs now feature on City Hall and commercial buildings; Heat-resilient planning was institutionalized in Chicago’s 2008 Climate Action Plan and Cook County’s Hazard Mitigation strategy; Increased community awareness and capacity to respond to heat emergencies, especially in at-risk neighborhoods.",
       "location": "Chicago, IL",
       "region": "Chicago, IL",
       "hazards": [
@@ -1754,7 +1750,7 @@
       "display_order": 16,
       "asset_filename": "case-1e4e1b001b0b-current-repair-chicago-heat.jpg",
       "asset_alt": "Archived EPA case-page image retained for internal review of Chicago green infrastructure and extreme heat.",
-      "asset_attribution": "Archived EPA case-page image; photographer and downstream reuse rights require confirmation. Internal review only.",
+      "asset_attribution": "Archived EPA case-page image; photographer and downstream reuse rights require confirmation.",
       "asset_license": "NOT_VERIFIED",
       "asset_width": 849,
       "asset_height": 981,
@@ -1781,7 +1777,7 @@
     },
     {
       "title": "Adapting Paris: Climate Resilience Strategies in the Face of Rising Temperatures",
-      "summary": "In Paris, France, Project partners paris implemented over 1,300 “cool islands” by combining data-driven heat risk mapping with nature-based and built solutions like shaded parks, water features, and public building access. The initiative prioritized equitable access, aiming to ensure that all residents, especially in vulnerable neighborhoods, were within a 10-minute walk of a cool zone. Extreme Heat. Project records place the work in the evaluate stage. Paris successfully implemented a network of over 1,300 publicly accessible cool zones, including shaded spaces, green schoolyards, misting stations, and cooling centers; Vulnerable residents gained increased access to relief during extreme heat, reducing health risks; The initiative has become a model for other cities, demonstrating how local governments can integrate health, equity, and climate resilience into daily urban life; The strategy has been embedded in Paris’s long-term climate adaptation and public health planning.",
+      "summary": "In Paris, France, the source describes this adaptation action: Paris implemented over 1,300 “cool islands” by combining data-driven heat risk mapping with nature-based and built solutions like shaded parks, water features, and public building access. The initiative prioritized equitable access, aiming to ensure that all residents, especially in vulnerable neighborhoods, were within a 10-minute walk of a cool zone. Extreme Heat. Project records place the work in the evaluate stage. Paris successfully implemented a network of over 1,300 publicly accessible cool zones, including shaded spaces, green schoolyards, misting stations, and cooling centers; Vulnerable residents gained increased access to relief during extreme heat, reducing health risks; The initiative has become a model for other cities, demonstrating how local governments can integrate health, equity, and climate resilience into daily urban life; The strategy has been embedded in Paris’s long-term climate adaptation and public health planning.",
       "location": "Paris, France",
       "region": "Paris, France",
       "hazards": [
@@ -1801,7 +1797,7 @@
         "Paris successfully implemented a network of over 1,300 publicly accessible cool zones, including shaded spaces, green schoolyards, misting stations, and cooling centers; Vulnerable residents gained increased access to relief during extreme heat, reducing health risks; The initiative has become a model for other cities, demonstrating how local governments can integrate health, equity, and climate resilience into daily urban life; The strategy has been embedded in Paris’s long-term climate adaptation and public health planning."
       ],
       "transferability": "The Cool Islands Initiative serves as a practical, scalable model for Washington UHI hotspot cities like Seattle, where urban heat islands disproportionately impact low-income and historically marginalized communities. Washington’s Climate Resilience Strategy emphasizes equity, public health, and community resilience goals that align directly with Paris’s approach. By adopting similar strategies, Washington’s cities can build resilience to extreme heat while promoting livability, public safety, and climate justice.",
-      "limitations": "Internal field-beta inclusion only; legacy wording, outcomes, source currency, and technical claims require human review.",
+      "limitations": "The source reports project information, but this record does not establish that the same outcomes will occur in other places or under different conditions.",
       "collection": "Transferable Examples from Other Regions",
       "source_url": "https://www.climate-x.com/articles/industry/adapting-paris-climate-resilience-strategies-in-the-face-of-rising-temperatures",
       "public_id": "case-11c95c93520c",
@@ -1898,7 +1894,7 @@
     },
     {
       "title": "Paris Oasis Schoolyard Program",
-      "summary": "In Paris, France, Project partners through a co-design and nature-based approach Paris was able to turn heat-prone, paved schoolyards into cool, green, and accessible spaces. The project utilized community engagement strategies, climate models, and pilot projects, to successfully implement more permeable surfaces, vegetation, and water retention features to reduce urban heat and stormwater runoff within schoolyards. Extreme Heat. Project records place the work in the evaluate stage. Dozens of schoolyards across Paris were successfully redesigned and opened to the public; Surface temperatures in OASIS yards were significantly lower compared to traditional schoolyards; Increased awareness and participation among students, teachers, and neighborhood residents; The program is now being scaled up as a citywide adaptation measure. The OASIS Schoolyard Programme is highly relevant to Washington, particularly urban areas like Seattle, which experiences increased risks from extreme heat, stormwater runoff, and inequitable access to green space.",
+      "summary": "In Paris, France, the source describes this adaptation action: Through a co-design and nature-based approach Paris was able to turn heat-prone, paved schoolyards into cool, green, and accessible spaces. The project utilized community engagement strategies, climate models, and pilot projects, to successfully implement more permeable surfaces, vegetation, and water retention features to reduce urban heat and stormwater runoff within schoolyards. Extreme Heat. Project records place the work in the evaluate stage. Dozens of schoolyards across Paris were successfully redesigned and opened to the public; Surface temperatures in OASIS yards were significantly lower compared to traditional schoolyards; Increased awareness and participation among students, teachers, and neighborhood residents; The program is now being scaled up as a citywide adaptation measure. The OASIS Schoolyard Programme is highly relevant to Washington, particularly urban areas like Seattle, which experiences increased risks from extreme heat, stormwater runoff, and inequitable access to green space.",
       "location": "Paris, France",
       "region": "Paris, France",
       "hazards": [
@@ -1919,7 +1915,7 @@
         "Dozens of schoolyards across Paris were successfully redesigned and opened to the public; Surface temperatures in OASIS yards were significantly lower compared to traditional schoolyards; Increased awareness and participation among students, teachers, and neighborhood residents; The program is now being scaled up as a citywide adaptation measure"
       ],
       "transferability": "The OASIS Schoolyard Programme is highly relevant to Washington, particularly urban areas like Seattle, which experiences increased risks from extreme heat, stormwater runoff, and inequitable access to green space. Similar to Paris, many Seattle schoolyards and public spaces are dominated by impervious surfaces that intensify urban heat islands effects while overwhelming drainage systems during heavy rain events. Paris's modelcan serve as a valuable resources and templeta for furture UHI and flood midgations strategies in Washington's most urbanized areas.",
-      "limitations": "Internal field-beta inclusion only; legacy wording, outcomes, source currency, and technical claims require human review.",
+      "limitations": "The source reports project information, but this record does not establish that the same outcomes will occur in other places or under different conditions.",
       "collection": "Transferable Examples from Other Regions",
       "source_url": "https://climate-adapt.eea.europa.eu/en/metadata/case-studies/paris-oasis-schoolyard-programme-france",
       "public_id": "case-936fc09f416c",
@@ -2038,7 +2034,7 @@
         "The Island County Sea Level Rise Strategy Study resulted in adaptable planning tools, including vulnerability maps and adaptation frameworks, that can support informed decision-making across various sectors. Overall, the project was able to successfully integrate sea level rise data within shoreline planning and fostered stronger collaborative networks between local agencies and community members. As a result, Island County is better equipped to prepare for and respond to future coastal flooding and sea level rise impacts."
       ],
       "transferability": "This project demonstrated how multi-dimensional co-production strategies can foster effective collaboration among communities, organizations, scientific institutions, and government agencies.",
-      "limitations": "Internal field-beta inclusion only; legacy wording, outcomes, source currency, and technical claims require human review.",
+      "limitations": "The source reports project information, but this record does not establish that the same outcomes will occur in other places or under different conditions.",
       "collection": "Washington and Pacific Northwest",
       "source_url": "https://wacoastalnetwork.com/research-and-tools/slr-case-studies/ic-strategy-study",
       "public_id": "case-2114bfaec551",
@@ -2137,7 +2133,7 @@
     },
     {
       "title": "Pines on the Severn Living Shoreline",
-      "summary": "In Arnold, Maryland, Project partners construct a 400-foot living shoreline rather than replacing failing bulkheads with hard shoreline reinforcement. Shoreline erosion, flooding, drainage, and runoff pressures affected the community's shared Severn River waterfront. Project records place the work in the implement stage. The controlling source reports increased usable waterfront acreage, improved aesthetics and wildlife habitat, and greater resident awareness of water-quality issues. Useful as an external comparator for community shoreline planning, grant-supported implementation, and nature-based erosion control. The controlling source documents the project and source-reported observations; it does not establish independent measured effectiveness or justify broad claims about living-shoreline performance.",
+      "summary": "In Arnold, Maryland, the source describes this adaptation action: Construct a 400-foot living shoreline rather than replacing failing bulkheads with hard shoreline reinforcement. Shoreline erosion, flooding, drainage, and runoff pressures affected the community's shared Severn River waterfront. Project records place the work in the implement stage. The controlling source reports increased usable waterfront acreage, improved aesthetics and wildlife habitat, and greater resident awareness of water-quality issues. Useful as an external comparator for community shoreline planning, grant-supported implementation, and nature-based erosion control. The controlling source documents the project and source-reported observations; it does not establish independent measured effectiveness or justify broad claims about living-shoreline performance.",
       "location": "Arnold, Maryland",
       "region": "Mid-Atlantic external comparator",
       "hazards": [
@@ -2200,7 +2196,7 @@
       "display_order": 20,
       "asset_filename": "case-112329203063-current-repair-successful-shorelines.jpg",
       "asset_alt": "University of Maryland case-page image retained for internal review of the Pines on the Severn living shoreline.",
-      "asset_attribution": "Image from the University of Maryland MOST Center case page; photographer and downstream reuse rights require confirmation. Internal review only.",
+      "asset_attribution": "Image from the University of Maryland MOST Center case page; photographer and downstream reuse rights require confirmation.",
       "asset_license": "NOT_VERIFIED",
       "asset_width": 960,
       "asset_height": 1138,
@@ -2243,7 +2239,7 @@
     },
     {
       "title": "Powell Shoreline Restoration Project",
-      "summary": "In Bainbridge Island, WA, Project partners remove bulkheads & Employ soft shoreline stabilization techniques. Marine & Coastal Changes. Project records place the work in the evaluate stage. Initiated in 2009 as a community-driven collaboration between the Powel family, Bainbridge Island Land Trust, and state and federal salmon recovery funders, the project removed approximately one-third of a mile of aging bulkheads and over 1,340 tons of riprap, concrete, and creosote timber. Over 2,500 native plants were installed, invasive species cleared, and intertidal habitat expanded by roughly 163%. A diverse stakeholder group—ranging from tribal representatives to city, engineering, and ecological experts guided the design process, supported by 1,200+ volunteer hours. The project also restored intertidal and salt marsh habitat, benefiting salmon and other wildlife. Large, private-property projects can serve as showcases and outreach opportunities, demonstrating feasibility and ecological benefits to other landowners.",
+      "summary": "In Bainbridge Island, WA, the source describes this adaptation action: Remove bulkheads & Employ soft shoreline stabilization techniques. Marine & Coastal Changes. Project records place the work in the evaluate stage. Initiated in 2009 as a community-driven collaboration between the Powel family, Bainbridge Island Land Trust, and state and federal salmon recovery funders, the project removed approximately one-third of a mile of aging bulkheads and over 1,340 tons of riprap, concrete, and creosote timber. Over 2,500 native plants were installed, invasive species cleared, and intertidal habitat expanded by roughly 163%. A diverse stakeholder group—ranging from tribal representatives to city, engineering, and ecological experts guided the design process, supported by 1,200+ volunteer hours. The project also restored intertidal and salt marsh habitat, benefiting salmon and other wildlife. Large, private-property projects can serve as showcases and outreach opportunities, demonstrating feasibility and ecological benefits to other landowners.",
       "location": "Bainbridge Island, WA",
       "region": "Bainbridge Island, WA",
       "hazards": [
@@ -2265,7 +2261,7 @@
         "Initiated in 2009 as a community-driven collaboration between the Powel family, Bainbridge Island Land Trust, and state and federal salmon recovery funders, the project removed approximately one-third of a mile of aging bulkheads and over 1,340 tons of riprap, concrete, and creosote timber. Over 2,500 native plants were installed, invasive species cleared, and intertidal habitat expanded by roughly 163%. A diverse stakeholder group—ranging from tribal representatives to city, engineering, and ecological experts guided the design process, supported by 1,200+ volunteer hours. The project also restored intertidal and salt marsh habitat, benefiting salmon and other wildlife."
       ],
       "transferability": "Large, private-property projects can serve as showcases and outreach opportunities, demonstrating feasibility and ecological benefits to other landowners.",
-      "limitations": "Internal field-beta inclusion only; legacy wording, outcomes, source currency, and technical claims require human review.",
+      "limitations": "The source reports project information, but this record does not establish that the same outcomes will occur in other places or under different conditions.",
       "collection": "Washington and Pacific Northwest",
       "source_url": "https://www.bi-landtrust.org/protected-spaces/stewardship/powel-shoreline-restoration-project",
       "public_id": "case-ea1028ed5e0f",
@@ -2363,7 +2359,7 @@
     },
     {
       "title": "Geothermal Heat Pump Case Study: Seattle Public Schools",
-      "summary": "In Seattle, WA, Project partners geo-thermal heat pumps & electric boilers. Extreme Heat and Public Health. Project records place the work in the implement stage. All schools involved in project have replaced gas-fired boilers with geothermal heat pumps and electric boilers. Seattle Public Schools’ electrical supply is 91% renewable, and carbon credits offset the remaining 9%; operational greenhouse gas emissions are minimal. Highlights district-level AI-optimized geothermal heat pump systems as a model for statewide replication. Internal field-beta inclusion only; legacy wording, outcomes, source currency, and technical claims require human review.",
+      "summary": "In Seattle, WA, the source describes this adaptation action: Geo-thermal heat pumps & electric boilers. Extreme Heat and Public Health. Project records place the work in the implement stage. All schools involved in project have replaced gas-fired boilers with geothermal heat pumps and electric boilers. Seattle Public Schools’ electrical supply is 91% renewable, and carbon credits offset the remaining 9%; operational greenhouse gas emissions are minimal. Highlights district-level AI-optimized geothermal heat pump systems as a model for statewide replication. The source reports project information, but this record does not establish that the same outcomes will occur in other places or under different conditions.",
       "location": "Seattle, WA",
       "region": "Seattle, WA",
       "hazards": [
@@ -2384,7 +2380,7 @@
         "All schools involved in project have replaced gas-fired boilers with geothermal heat pumps and electric boilers. Seattle Public Schools’ electrical supply is 91% renewable, and carbon credits offset the remaining 9%; operational greenhouse gas emissions are minimal"
       ],
       "transferability": "Highlights district-level AI-optimized geothermal heat pump systems as a model for statewide replication.",
-      "limitations": "Internal field-beta inclusion only; legacy wording, outcomes, source currency, and technical claims require human review.",
+      "limitations": "The source reports project information, but this record does not establish that the same outcomes will occur in other places or under different conditions.",
       "collection": "Washington and Pacific Northwest",
       "source_url": "https://www.energy.gov/sites/default/files/2024-09/geothermal-heat-pump-case-study-seattle-public-schools.pdf",
       "public_id": "case-b26dd75b2d51",
@@ -2479,7 +2475,7 @@
     },
     {
       "title": "San Francisco – Drought Resilience Matrix",
-      "summary": "In San Francisco, CA, Project partners internal planning tool, cross-departmental use. Drought & Water Supply. Project records place the work in the evaluate stage. The creation of the Drought Resilience Matrix to evaluate water supply alternatives in Urban Areas; The study concluded that while no solution is perfect, local, diversified supply options tend to be the most robust under prolonged drought conditions. Model for large urban utilities in Washington. Internal field-beta inclusion only; legacy wording, outcomes, source currency, and technical claims require human review.",
+      "summary": "In San Francisco, CA, the source describes this adaptation action: Internal planning tool, cross-departmental use. Drought & Water Supply. Project records place the work in the evaluate stage. The creation of the Drought Resilience Matrix to evaluate water supply alternatives in Urban Areas; The study concluded that while no solution is perfect, local, diversified supply options tend to be the most robust under prolonged drought conditions. Model for large urban utilities in Washington. The source reports project information, but this record does not establish that the same outcomes will occur in other places or under different conditions.",
       "location": "San Francisco, CA",
       "region": "San Francisco, CA",
       "hazards": [
@@ -2498,7 +2494,7 @@
         "The creation of the Drought Resilience Matrix to evaluate water supply alternatives in Urban Areas; The study concluded that while no solution is perfect, local, diversified supply options tend to be the most robust under prolonged drought conditions."
       ],
       "transferability": "Model for large urban utilities in Washington",
-      "limitations": "Internal field-beta inclusion only; legacy wording, outcomes, source currency, and technical claims require human review.",
+      "limitations": "The source reports project information, but this record does not establish that the same outcomes will occur in other places or under different conditions.",
       "collection": "Transferable Examples from Other Regions",
       "source_url": "https://www.mdpi.com/2225-1154/12/5/66",
       "public_id": "case-487646af05ed",
@@ -2592,7 +2588,7 @@
     },
     {
       "title": "San Diego Gas & Electric Wildfire Strategy",
-      "summary": "In San Diego, CA, Project partners through inter-organizational collaboration between SDG&E, UCLA, and the U.S. Forest Service a multidisciplinary tool was developed to aid in wildfire response and mitigation: Santa Ana Wildfire Threat Index. Wildfire & Smoke. Project records place the work in the adapt stage. Improved forecasts of fire-conducive weather, especially during Santa Ana events, with several days of advance notice. Operational enhancements, like temporarily disabling trunk lines in vulnerable areas, reducing the chance of equipment sparking fires. Cost savings, through avoided damages, reduced outages, and fewer wildfire ignitions linked to power infrastructure. Enhanced public safety, thanks to earlier alerts and better-prepared firefighters and utility staff. This case study highlights the critical role of early warning systems and localized risk forecasting, while demonstrating how public–private partnerships and collaboration with academic institutions can drive innovative, science-based solutions.",
+      "summary": "In San Diego, CA, the source describes this adaptation action: Through inter-organizational collaboration between SDG&E, UCLA, and the U.S. Forest Service a multidisciplinary tool was developed to aid in wildfire response and mitigation: Santa Ana Wildfire Threat Index. Wildfire & Smoke. Project records place the work in the adapt stage. Improved forecasts of fire-conducive weather, especially during Santa Ana events, with several days of advance notice. Operational enhancements, like temporarily disabling trunk lines in vulnerable areas, reducing the chance of equipment sparking fires. Cost savings, through avoided damages, reduced outages, and fewer wildfire ignitions linked to power infrastructure. Enhanced public safety, thanks to earlier alerts and better-prepared firefighters and utility staff. This case study highlights the critical role of early warning systems and localized risk forecasting, while demonstrating how public–private partnerships and collaboration with academic institutions can drive innovative, science-based solutions.",
       "location": "San Diego, CA",
       "region": "San Diego, CA",
       "hazards": [
@@ -2613,7 +2609,7 @@
         "Improved forecasts of fire-conducive weather, especially during Santa Ana events, with several days of advance notice. Operational enhancements, like temporarily disabling trunk lines in vulnerable areas, reducing the chance of equipment sparking fires. Cost savings, through avoided damages, reduced outages, and fewer wildfire ignitions linked to power infrastructure. Enhanced public safety, thanks to earlier alerts and better-prepared firefighters and utility staff"
       ],
       "transferability": "This case study highlights the critical role of early warning systems and localized risk forecasting, while demonstrating how public–private partnerships and collaboration with academic institutions can drive innovative, science-based solutions. It also reinforces Washington’s commitment to proactive risk management rather than reactive emergency responses.",
-      "limitations": "Internal field-beta inclusion only; legacy wording, outcomes, source currency, and technical claims require human review.",
+      "limitations": "The source reports project information, but this record does not establish that the same outcomes will occur in other places or under different conditions.",
       "collection": "Transferable Examples from Other Regions",
       "source_url": "https://toolkit.climate.gov/case-study/watching-wind-effort-get-upper-hand-wildfire",
       "public_id": "case-692e73b7e651",
@@ -2732,7 +2728,7 @@
         "The project produced a prioritized list of invasive species expected to pose future threats due to climate change, which can help guide prevention and early detection efforts. The team also offered policy recommendations aimed at strengthening regulatory tools, especially around pathways like horticultural trade and transportation where new invasions are most likely. In addition, they developed user-friendly decision-support tools to help land managers incorporate climate and invasive species data into their planning. Moreover, the project fostered a more proactive mindset among stakeholders, emphasizing the need to anticipate and prevent invasions rather than react after damage has already been done."
       ],
       "transferability": "Using climate-informed modeling to anticipate future invasion risks is an example of how Washington can integrate climate science into natural resource planning and decision-making. It also highlights ways Washington can build resilient ecological systems by assessing and addressing vulnerabilities early.",
-      "limitations": "Internal field-beta inclusion only; legacy wording, outcomes, source currency, and technical claims require human review.",
+      "limitations": "The source reports project information, but this record does not establish that the same outcomes will occur in other places or under different conditions.",
       "collection": "Washington and Pacific Northwest",
       "source_url": "https://www.youtube.com/watch?v=v9BuFg3xuh0&t=32s",
       "public_id": "case-4ede7f783a7c",
@@ -2850,7 +2846,7 @@
         "Ecological and hydrological restoration informed by cultural knowledge, continued monitoring."
       ],
       "transferability": "A prime example of collaborative restoration efforts accross different sectors",
-      "limitations": "Internal field-beta inclusion only; legacy wording, outcomes, source currency, and technical claims require human review.",
+      "limitations": "The source reports project information, but this record does not establish that the same outcomes will occur in other places or under different conditions.",
       "collection": "Washington and Pacific Northwest",
       "source_url": "https://dashboard.yakamafish-star.net/sites/default/files/2018-06/2006_1_Lower_Yakima_Valley_Riparian_Restoration_32924.pdf",
       "public_id": "case-65449b839105",
@@ -2948,7 +2944,7 @@
     },
     {
       "title": "Tulalip Tribes Natural Resources Climate Change Adaptation",
-      "summary": "In Tulalip, WA, Project partners preparedness strategies. Marine & Coastal Changes, Drought & Water Supply, Flooding. Project records place the work in the implement stage. Health Programs, Hazard Mitigation Plan, Food Sovereignty, Energy Security, Sea Level Rise on the Reservation Coast, Forests [all ongoing]. Public health, hazard mitigation, food soveriengty, energy security in response to climate change. Internal field-beta inclusion only; legacy wording, outcomes, source currency, and technical claims require human review.",
+      "summary": "In Tulalip, WA, the source describes this adaptation action: Preparedness strategies. Marine & Coastal Changes, Drought & Water Supply, Flooding. Project records place the work in the implement stage. Health Programs, Hazard Mitigation Plan, Food Sovereignty, Energy Security, Sea Level Rise on the Reservation Coast, Forests [all ongoing]. Public health, hazard mitigation, food soveriengty, energy security in response to climate change. The source reports project information, but this record does not establish that the same outcomes will occur in other places or under different conditions.",
       "location": "Tulalip, WA",
       "region": "Tulalip, WA",
       "hazards": [
@@ -2973,7 +2969,7 @@
         "Health Programs, Hazard Mitigation Plan, Food Sovereignty, Energy Security, Sea Level Rise on the Reservation Coast, Forests [all ongoing]"
       ],
       "transferability": "Public health, hazard mitigation, food soveriengty, energy security in response to climate change",
-      "limitations": "Internal field-beta inclusion only; legacy wording, outcomes, source currency, and technical claims require human review.",
+      "limitations": "The source reports project information, but this record does not establish that the same outcomes will occur in other places or under different conditions.",
       "collection": "Washington and Pacific Northwest",
       "source_url": "https://nr.tulaliptribes.com/Topics/ClimateChange/ClimateChangeAdaptation",
       "public_id": "case-d3a63b579b60",
@@ -3077,12 +3073,12 @@
       "slug": "case-032bdd50d15c",
       "collection": "Washington and Pacific Northwest",
       "last_source_checked_at": "",
-      "summary": "In Washington, Project partners leads the documented adaptation work. The adaptation action requires source repair. The cited source documents the project context and implementation approach. It should not be read as evidence that the same results will occur in another community, watershed, utility, or institutional setting.",
+      "summary": "The current source record does not provide a concise climate-mechanism statement. The current source record does not provide a verified outcome statement for public use.",
       "adaptation_action": "",
       "reported_outcomes": "The current source record does not provide a verified outcome statement for public use.",
-      "transferability": "Transfer considerations require case-specific human review.",
+      "transferability": "Transferability depends on local climate, governance, funding, and implementation conditions.",
       "limitations": "The source documents the action and its implementation context. It does not by itself establish broader effectiveness or outcomes beyond the reported evidence.",
-      "climate_mechanism": "Climate mechanism wording requires source-grounded human review.",
+      "climate_mechanism": "The current source record does not provide a concise climate-mechanism statement.",
       "hazards": [
         "WILDFIRE_SMOKE"
       ],
@@ -3090,17 +3086,14 @@
         "WASHINGTON_STATEWIDE"
       ],
       "location_types": [
-        "TRIBAL_NATION",
-        "WATERSHED_BASIN"
+        "TRIBAL_NATION"
       ],
-      "geographic_scale": "COMMUNITY",
+      "geographic_scale": "REGIONAL",
       "themes": [
-        "WATER",
-        "FORESTS_FIRE",
-        "COMMUNITY_RESILIENCE"
+        "FORESTS_FIRE"
       ],
       "adaptation_strategies": [
-        "COMMUNITY_ENGAGEMENT_CAPACITY_BUILDING"
+        "ASSESSMENT_PLANNING"
       ],
       "implementation_stage": "Planning and design",
       "lead_organization_types": [
@@ -3113,9 +3106,9 @@
       "preview_target": false,
       "latitude": 47.4009,
       "longitude": -121.4905,
+      "primary_hazard": "OTHER_ADAPTATION",
       "location_precision": "STATE_CENTROID",
       "coordinate_status": "PROVISIONAL_GAZETTEER",
-      "primary_hazard": "OTHER_ADAPTATION",
       "map_visible": true,
       "hazard_label": "Other adaptation",
       "hazard_color": "#7A8492",

@@ -60,7 +60,10 @@
   let activeCollection = "";
   let returnFocus = null;
   let openedInternally = false;
-  let visibleLimit = matchMedia("(max-width: 719px)").matches ? 6 : 27;
+  function defaultVisibleLimit() {
+    return matchMedia("(max-width: 719px)").matches ? 6 : 12;
+  }
+  let visibleLimit = defaultVisibleLimit();
   let filteredRows = [];
   let originCard = null;
   let resultView = initialParams.get("view") === "map" ? "map" : "grid";
@@ -93,7 +96,7 @@
     if (activeCollection) params.set("collection", activeCollection);
     if (resultView !== "grid") params.set("view", resultView);
     Object.entries(controls).forEach(([key, control]) => { const value = control.value.trim(); if (value && !(key === "sort" && value === "curated")) params.set(key, value); });
-    if (visibleLimit !== (matchMedia("(max-width: 719px)").matches ? 6 : 12)) params.set("limit", String(visibleLimit));
+    if (visibleLimit !== defaultVisibleLimit()) params.set("limit", String(visibleLimit));
     const query = params.size ? `?${params}` : "";
     return fileMode ? `${location.pathname}${query}` : `/library${query}`;
   }
@@ -330,9 +333,9 @@
   function openTour() { showTourStep(0); $("#tour-overlay").hidden = false; setPageInert(true); $("#tour-close").focus(); }
   function closeTour() { $("#tour-overlay").hidden = true; setPageInert(false); $("#tour-trigger").focus(); }
 
-  Object.values(controls).forEach(control => control.addEventListener("input", () => { visibleLimit = matchMedia("(max-width: 719px)").matches ? 6 : 27; draw(); }));
+  Object.values(controls).forEach(control => control.addEventListener("input", () => { visibleLimit = defaultVisibleLimit(); draw(); }));
   $("#active-filters").addEventListener("click", event => { const key = event.target.closest("[data-clear]")?.dataset.clear; if (!key) return; if (key === "all") { activeCollection = ""; Object.entries(controls).forEach(([name, control]) => { control.value = name === "sort" ? "collection" : ""; }); } else if (key === "collection") activeCollection = ""; else controls[key].value = ""; $$(".tab").forEach(tab => tab.classList.toggle("active", tab.dataset.collection === activeCollection)); draw(); });
-  $$(".tab").forEach(tab => tab.addEventListener("click", () => { activeCollection = tab.dataset.collection; $$(".tab").forEach(item => item.classList.toggle("active", item === tab)); visibleLimit = matchMedia("(max-width: 719px)").matches ? 6 : 27; draw(); }));
+  $$(".tab").forEach(tab => tab.addEventListener("click", () => { activeCollection = tab.dataset.collection; $$(".tab").forEach(item => item.classList.toggle("active", item === tab)); visibleLimit = defaultVisibleLimit(); draw(); }));
   $("#load-more").addEventListener("click", () => { visibleLimit += matchMedia("(max-width: 719px)").matches ? 6 : 12; draw(); });
   $("#export-csv").addEventListener("click", exportCsv);
   $$("[data-view]").forEach(button => button.addEventListener("click", () => setResultView(button.dataset.view)));
