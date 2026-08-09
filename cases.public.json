@@ -1,11 +1,12 @@
 {
   "meta": {
-    "snapshot_id": "staging-20260809T020516-6e4cdd11",
-    "previous_snapshot_id": "staging-20260809T014556-8f757163",
-    "dataset_version": "car-wash-v3-4",
-    "public_ui_fingerprint": "f71460adb359f36d893b99be66b114e77ae7c97822c7683194f5e41b18d81010",
-    "created_at": "2026-08-09T02:05:16.950706+00:00",
-    "activated_at": "2026-08-09T02:05:16.950706+00:00",
+    "snapshot_id": "staging-20260809T022738-eba898d6",
+    "previous_snapshot_id": "staging-20260809T022334-cef2a8f2",
+    "dataset_version": "car-wash-v3-6-5",
+    "product_version": "3.6.5",
+    "public_ui_fingerprint": "9f2af544124c49d763c89820b47c6446174f8fa968858f09ef4440687c66328f",
+    "created_at": "2026-08-09T02:27:38.429846+00:00",
+    "activated_at": "2026-08-09T02:27:38.429846+00:00",
     "case_count": 27,
     "release_profile": "INTERNAL_FULL",
     "asset_mode": "INTERNAL_REFERENCE_OR_GENERATED",
@@ -42,7 +43,7 @@
     "visibility": "local-editorial-preview-only",
     "production_deployment": "DISABLED",
     "approval_boundary": "Internal editorial preview only; human review and publication approval are still required.",
-    "source_commit_sha": "deb98b664cf5ee337db1cb8932bdcb6f006f0570",
+    "source_commit_sha": "0612c4d0460f5e954a33ef467d0b9c170d848324",
     "public_schema_version": "public-case-copy-v1",
     "taxonomy_version": "case-taxonomy-v1",
     "render_mode": "INTERNAL_STAGING",
@@ -80,8 +81,8 @@
       "footer_heading": "CAR-WASH Case Study Repository",
       "footer_summary": "Human-reviewed research staging for WASCO/CIG discussion."
     },
-    "site_revision_id": "site-revision-1267b2b4e4b0b3d1",
-    "site_revision_hash": "1267b2b4e4b0b3d137c174455660d8acb71fa5e1d206abfb8a20f9cde62a1f2d",
+    "site_revision_id": "site-revision-e9cec32c15dbff0b",
+    "site_revision_hash": "e9cec32c15dbff0b195c8ff5a7bb90239baeebd89b22b63c1bb63e00fe3a2341",
     "exact_case_versions": {
       "case-f1e1186726cc4e3e": "case-f1e1186726cc4e3e-v-f1ab81684778",
       "case-ea09a24590a79bd4": "case-ea09a24590a79bd4-v-3dc82e87a615",
