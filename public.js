@@ -36,7 +36,7 @@
   const assetPath = filename => `${fileMode ? "assets" : "/assets"}/${encodeURIComponent(filename)}?v=${assetVersion}`;
   const image = item => assetPath(item.asset_filename);
   const stage = item => { const raw = clean(normalize(item.implementation_stage || item.project_date)); return stageGroups[raw.toUpperCase()] || label(raw) || "Stage not specified"; };
-  const sourceDate = item => { const raw = clean(item.last_source_checked_at); const match = raw.match(/^\d{4}-\d{2}-\d{2}/); return match ? match[0] : "Not yet checked"; };
+  const sourceDate = item => { const raw = clean(item.last_source_checked_at); const match = raw.match(/^\d{4}-\d{2}-\d{2}/); return match ? match[0] : ""; };
   const slug = item => item.slug || item.public_id;
   const casePath = item => fileMode ? `#case=${encodeURIComponent(slug(item))}` : `/library/cases/${encodeURIComponent(slug(item))}`;
   const caseBySlug = value => cases.find(item => slug(item) === value || item.public_id === value);
@@ -136,7 +136,7 @@
 
   function tags(item) {
     const hazard = arr(item.hazards)[0], theme = arr(item.themes)[0];
-    return `<div class="tags">${hazard ? `<span class="tag">${esc(normalize(hazard))}</span>` : ""}${theme ? `<span class="tag theme">${esc(normalize(theme))}</span>` : ""}</div>`;
+    return `<div class="tags">${hazard ? `<span class="tag">${esc(label(hazard))}</span>` : ""}${theme ? `<span class="tag theme">${esc(label(theme))}</span>` : ""}</div>`;
   }
 
   function picture(item, {hero = false, eager = false} = {}) {
@@ -154,12 +154,14 @@
 
   function card(item) {
     const fields = matchedFields(item);
-    return `<article class="case-card ${item.preview_target ? "preview-target" : ""}" data-case-id="${esc(item.public_id)}" data-preview-target="${item.preview_target ? "true" : "false"}"><a class="card-image-link open-case" data-case-slug="${esc(slug(item))}" href="${caseHref(item)}" aria-label="Open ${esc(normalize(item.title))}">${picture(item)}<span class="image-action">View case</span></a><div class="card-copy"><p class="collection-label">${esc(normalize(item.collection))}</p>${tags(item)}<h2><a class="open-case" data-case-slug="${esc(slug(item))}" href="${caseHref(item)}">${esc(normalize(item.title))}</a></h2><p class="place">${esc(clean(item.location || item.region) || "Location pending review")}</p>${fields.length ? `<p class="match-note">Matched: ${esc(fields.join(", "))}</p>` : ""}<div class="card-overview"><b>Case overview</b><p>${esc(excerpt(item.summary, cardExcerptLength))}</p></div><div class="card-meta"><span><b>Implementation</b>${esc(stage(item))}</span><span><b>${esc(siteText("source_date_label", "Source checked"))}</b>${esc(sourceDate(item))}</span></div></div></article>`;
+    const checked = sourceDate(item);
+    return `<article class="case-card ${item.preview_target ? "preview-target" : ""}" data-case-id="${esc(item.public_id)}" data-preview-target="${item.preview_target ? "true" : "false"}"><a class="card-image-link open-case" data-case-slug="${esc(slug(item))}" href="${caseHref(item)}" aria-label="Open ${esc(normalize(item.title))}">${picture(item)}<span class="image-action">View case</span></a><div class="card-copy"><p class="collection-label">${esc(normalize(item.collection))}</p>${tags(item)}<h2><a class="open-case" data-case-slug="${esc(slug(item))}" href="${caseHref(item)}">${esc(normalize(item.title))}</a></h2><p class="place">${esc(clean(item.location || item.region) || "Location pending review")}</p>${fields.length ? `<p class="match-note">Matched: ${esc(fields.join(", "))}</p>` : ""}<div class="card-overview"><b>Case overview</b><p>${esc(excerpt(item.summary, cardExcerptLength))}</p></div><div class="card-meta"><span><b>Implementation</b>${esc(stage(item))}</span>${checked ? `<span><b>${esc(siteText("source_date_label", "Last updated"))}</b>${esc(checked)}</span>` : ""}</div></div></article>`;
   }
 
   function chips() {
     const selected = [["collection", activeCollection], ["hazard", controls.hazard.value], ["region", controls.region.value], ["location_type", controls.location_type.value], ["theme", controls.theme.value], ["strategy", controls.strategy.value], ["stage", controls.stage.value], ["lead_type", controls.lead_type.value], ["q", controls.q.value.trim()]].filter(([, value]) => value);
-    $("#active-filters").innerHTML = selected.map(([key, value]) => `<button type="button" class="filter-chip" data-clear="${key}">${esc(value)} <span aria-hidden="true">&times;</span></button>`).join("") + (selected.length > 1 ? `<button type="button" class="filter-chip clear-all" data-clear="all">Clear all</button>` : "");
+    const readable = (key, value) => ["hazard", "region", "location_type", "theme", "strategy", "lead_type"].includes(key) ? label(value) : value;
+    $("#active-filters").innerHTML = selected.map(([key, value]) => `<button type="button" class="filter-chip" data-clear="${key}">${esc(readable(key, value))} <span aria-hidden="true">&times;</span></button>`).join("") + (selected.length > 1 ? `<button type="button" class="filter-chip clear-all" data-clear="all">Clear all</button>` : "");
   }
 
   function curatedFeatured() {
@@ -222,8 +224,9 @@
   }
 
   function citation(item) {
-    const checked = clean(item.last_source_checked_at) || "source check pending";
-    return `CAR-WASH. “${normalize(item.title)}.” ${siteText("site_title", "Climate Adaptation Case Study Repository")}, ${normalize(item.collection)}. ${siteText("source_date_label", "Source checked")} ${checked}. ${new URL(caseHref(item), location.href).href}`;
+    const checked = sourceDate(item);
+    const date = checked ? ` ${siteText("source_date_label", "Last updated")} ${checked}.` : "";
+    return `CAR-WASH. “${normalize(item.title)}.” ${siteText("site_title", "Climate Adaptation Case Study Repository")}, ${normalize(item.collection)}.${date} ${new URL(caseHref(item), location.href).href}`;
   }
 
   async function copyText(value, status) {
@@ -252,7 +255,7 @@
       ["Climate context", item.climate_mechanism],
       ["Transferability", item.transferability],
     ].filter(([, value]) => normalize(value));
-    const facts = [["Place", item.location || item.region], ["Hazards", arr(item.hazards).map(label).join(", ")], ["Location type", arr(item.location_types).map(label).join(", ")], ["Sector", arr(item.themes).map(label).join(", ")], ["Adaptation strategy", arr(item.adaptation_strategies).map(label).join(", ")], ["Implementation stage", stage(item)], ["Lead organization", item.lead_organization], ["Partners", arr(item.partners).join(", ")], [siteText("source_date_label", "Source checked"), sourceDate(item)], ["Image credit", item.asset_attribution]].filter(([, value]) => normalize(value));
+    const facts = [["Place", item.location || item.region], ["Hazards", arr(item.hazards).map(label).join(", ")], ["Location type", arr(item.location_types).map(label).join(", ")], ["Sector", arr(item.themes).map(label).join(", ")], ["Adaptation strategy", arr(item.adaptation_strategies).map(label).join(", ")], ["Implementation stage", stage(item)], ["Lead organization", item.lead_organization], ["Partners", arr(item.partners).join(", ")], [siteText("source_date_label", "Last updated"), sourceDate(item)], ["Image credit", item.asset_attribution]].filter(([, value]) => normalize(value));
     const related = relatedCases(item);
     detail.innerHTML = `<div class="detail-hero">${picture(item, {eager:true})}<button class="close" type="button" aria-label="Close case">&times;</button><div class="detail-title">${tags(item)}<h2 id="detail-title">${esc(normalize(item.title))}</h2><p>${esc(clean(item.location || item.region) || "Location pending review")}</p></div></div><div class="detail-utility"><button data-copy-link type="button">Copy permalink</button><button data-copy-citation type="button">Copy citation</button><button data-print type="button">Print case</button><span class="utility-status" role="status"></span></div><div class="detail-body"><div class="detail-narrative">${main.map(([label,value], index) => `<section class="${index === 0 ? "detail-lede" : ""}"><h3>${esc(label)}</h3><p${index === 0 ? ' id="detail-summary"' : ""}>${esc(normalize(value))}</p></section>`).join("")}<a class="source-link" href="${esc(item.source_url)}" target="_blank" rel="noopener">${esc(siteText("original_source_label", "Open original source"))} <span aria-hidden="true">&rarr;</span></a>${related.length ? `<section class="related"><h3>Related cases</h3>${related.map(candidate => `<a class="related-link" href="${caseHref(candidate)}" data-related="${esc(slug(candidate))}">${esc(candidate.title)}</a>`).join("")}</section>` : ""}</div><aside class="fact-list">${facts.map(([label,value]) => `<div class="fact"><b>${esc(label)}</b>${esc(normalize(value))}</div>`).join("")}</aside></div>`;
     const overlay = $("#case-overlay");
