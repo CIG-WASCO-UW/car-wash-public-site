@@ -7,7 +7,7 @@
   <title>CAR-WASH Climate Adaptation Case Study Repository</title>
   <link rel="icon" href="data:,">
   <link rel="preload" as="image" href="assets/site-hero-washington-state-mount-rainier-nps-1280.jpg" fetchpriority="high">
-  <link rel="stylesheet" href="public.css?v=staging-20260809T023851-3da2bf4d">
+  <link rel="stylesheet" href="public.css?v=v3.6.7-compare">
 </head>
 <body class="research-atlas">
   <a class="skip-link" href="#library">Skip to case studies</a>
@@ -93,6 +93,7 @@
         <div class="view-switcher" role="group" aria-label="Results view">
           <button class="view-button active" type="button" data-view="grid" aria-pressed="true">Grid</button>
           <button class="view-button" type="button" data-view="map" aria-pressed="false">Map</button>
+          <button class="view-button" type="button" data-view="compare" aria-pressed="false">Compare</button>
         </div>
         <button id="export-csv" class="tool-button" type="button">Export filtered CSV</button>
         <label>Sort <select id="sort"><option value="curated">Curated order</option><option value="collection">Washington first</option><option value="title">Title A-Z</option><option value="review">Latest source check</option></select></label>
@@ -148,8 +149,16 @@
     <p id="snapshot-meta" class="snapshot-meta"></p>
   </main>
 
+  <aside id="compare-tray" class="compare-tray" hidden aria-live="polite">
+    <div><strong>Compare cases</strong><span id="compare-summary">0 of 3 selected</span></div>
+    <div class="compare-actions"><button id="clear-compare" type="button">Clear</button><button id="open-compare" type="button" disabled>Compare selected</button></div>
+  </aside>
+
   <div id="case-overlay" class="overlay" hidden>
     <article id="case-detail" class="case-detail" role="dialog" aria-modal="true" aria-labelledby="detail-title" aria-describedby="detail-summary"></article>
+  </div>
+  <div id="compare-overlay" class="overlay" hidden>
+    <article id="compare-detail" class="compare-detail" role="dialog" aria-modal="true" aria-labelledby="compare-title"></article>
   </div>
   <div id="tour-overlay" class="overlay" hidden>
     <section id="review-tour" class="review-tour" role="dialog" aria-modal="true" aria-labelledby="tour-title">
@@ -173,11 +182,11 @@
 
   <script>window.__wascoConsoleErrors=[];addEventListener('error',e=>window.__wascoConsoleErrors.push(String(e.message)));addEventListener('unhandledrejection',e=>window.__wascoConsoleErrors.push(String(e.reason)));</script>
   <script>window.CAR_WASH_STATIC_SNAPSHOT=true;</script>
-  <script src="cases.js?v=staging-20260809T023851-3da2bf4d"></script>
-  <script src="us-states.js?v=staging-20260809T023851-3da2bf4d"></script>
-  <script src="map-cases.js?v=staging-20260809T023851-3da2bf4d"></script>
-  <script src="climate-context.js?v=staging-20260809T023851-3da2bf4d"></script>
-  <script src="public-map.js?v=staging-20260809T023851-3da2bf4d"></script>
-  <script src="public.js?v=staging-20260809T023851-3da2bf4d"></script>
+  <script src="cases.js?v=v3.6.7-compare"></script>
+  <script src="us-states.js?v=v3.6.7-compare"></script>
+  <script src="map-cases.js?v=v3.6.7-compare"></script>
+  <script src="climate-context.js?v=v3.6.7-compare"></script>
+  <script src="public-map.js?v=v3.6.7-compare"></script>
+  <script src="public.js?v=v3.6.7-compare"></script>
 </body>
 </html>

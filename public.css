@@ -623,6 +623,7 @@ body.layout-reading .card-overview p {
 
 .compare-head { position: relative; padding: 26px 80px 20px 28px; border-bottom: 1px solid var(--line); }
 .compare-head h2 { margin: 0; font: 700 30px/1.1 var(--serif); }
+.compare-mobile-hint { display: none; }
 .compare-table-wrap { overflow: auto; padding: 0 24px 30px; }
 .compare-table { width: 100%; border-collapse: collapse; }
 .compare-table th, .compare-table td { min-width: 220px; padding: 13px; vertical-align: top; border-bottom: 1px solid var(--line); text-align: left; }
@@ -925,6 +926,9 @@ body.modal-open main, body.modal-open .site-header, body.modal-open .hero, body.
   .site-footer { grid-template-columns: 1fr; }
   .site-footer > p { grid-column: auto; }
   .compare-tray { bottom: 8px; }
+  .compare-mobile-hint { display: block; color: var(--purple); font-size: 12px; font-weight: 800; }
+  .compare-table-wrap { padding-inline: 10px; overscroll-behavior-x: contain; }
+  .compare-table th:first-child { min-width: 145px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
