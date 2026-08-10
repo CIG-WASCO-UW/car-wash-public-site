@@ -1,7 +1,7 @@
 {
   "schema": "car-wash-public-release-manifest-v1",
-  "snapshot_id": "staging-20260809T023851-3da2bf4d",
-  "generated_at": "2026-08-09T02:38:51.778564+00:00",
+  "snapshot_id": "staging-20260810T191338-3bc1e736",
+  "generated_at": "2026-08-10T19:13:38.202946+00:00",
   "case_count": 27,
   "release_profile": "INTERNAL_FULL",
   "visibility": "local-editorial-preview-only",
@@ -66,8 +66,8 @@
     "case-65449b8391057437": "case-65449b8391057437-v-59913b1fb364",
     "case-d3a63b579b601b80": "case-d3a63b579b601b80-v-e151a62d9081"
   },
-  "site_revision_id": "site-revision-dc5c916562283c43",
-  "site_revision_hash": "dc5c916562283c435d75bc4a05b9329a5172f857af2ef1f73c11a1044ac97f26",
+  "site_revision_id": "site-revision-fbe3e6174594fb45",
+  "site_revision_hash": "fbe3e6174594fb45f3a41db1e8dec6ce1dd4b3c4c8cc09f5035b862931901044",
   "site_copy": {
     "site_eyebrow": "Washington climate adaptation repository",
     "site_title": "Climate Adaptation Case Study Repository",
@@ -102,7 +102,7 @@
     "footer_heading": "CAR-WASH Case Study Repository",
     "footer_summary": "Human-reviewed research staging for WASCO/CIG discussion."
   },
-  "source_commit_sha": "0612c4d284054553545dfef211ee7e914971cae6",
+  "source_commit_sha": "0000000000000000000000000000000000000000",
   "public_schema_version": "public-case-copy-v1",
   "taxonomy_version": "case-taxonomy-v1",
   "render_mode": "INTERNAL_STAGING",

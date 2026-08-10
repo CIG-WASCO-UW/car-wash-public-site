@@ -428,7 +428,7 @@
   $("#snapshot-meta").textContent = meta.render_mode === "PUBLIC_PRODUCTION"
     ? `Published snapshot ${meta.snapshot_id || meta.dataset_version || ""}.`
     : `${previewMode ? "Local website preview" : "Internal staging snapshot"} ${meta.snapshot_id || meta.dataset_version || "pending"}. No public-use approval is implied.`;
-  $("#footer-version").textContent = `V${meta.product_version || "3.6.6"}`;
+  $("#footer-version").textContent = `V${meta.product_version || "3.6.7"}`;
   $$('[data-site-copy]').forEach(node => {
     const value = clean(siteCopy[node.dataset.siteCopy]);
     if (value) node.textContent = value;
