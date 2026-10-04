@@ -1,7 +1,7 @@
 {
   "schema": "car-wash-public-release-manifest-v1",
-  "snapshot_id": "staging-20260810T191338-3bc1e736",
-  "generated_at": "2026-08-10T19:13:38.202946+00:00",
+  "snapshot_id": "staging-20261004T201158-c5b2675f",
+  "generated_at": "2026-10-04T20:11:58.370224+00:00",
   "case_count": 27,
   "release_profile": "INTERNAL_FULL",
   "visibility": "local-editorial-preview-only",
@@ -9,9 +9,9 @@
   "approval_boundary": "Internal editorial preview only; human review and publication approval are still required.",
   "asset_mode": "INTERNAL_REFERENCE_OR_GENERATED",
   "approved_public_copy_hashes": {
-    "case-f1e1186726cc": "526db1117c9058c11c6a61fe54ae5d268deedbc7f1b521307b7ebcd23f37fd83",
-    "case-ea09a24590a7": "e7ed91ff9c20d47bdd67bc774e3f1699e1649985bd0adbb2caee0f774e8df059",
     "case-f8d8e2679560": "5debe9a99266de4d632682f3009b4ea2336b12d4f86711dd7509acc194ae7e91",
+    "case-ea09a24590a7": "e7ed91ff9c20d47bdd67bc774e3f1699e1649985bd0adbb2caee0f774e8df059",
+    "case-f1e1186726cc": "526db1117c9058c11c6a61fe54ae5d268deedbc7f1b521307b7ebcd23f37fd83",
     "case-202b933f7f34": "2e39a919358198435ff4456734e7c2a8abcda0feabd7f4692a6e6f0c04ab073d",
     "case-3a7082ea7b13": "cb70a269239f90642a3d435f0f7f2f0b2d2ed4b846f9cb62bc50683e1a583476",
     "case-6d73f76fa8ce": "31e39353375c8958e112c655ce8dbf7f94058d996cd9db1d325f9abfbf90b5e9",
@@ -66,8 +66,8 @@
     "case-65449b8391057437": "case-65449b8391057437-v-59913b1fb364",
     "case-d3a63b579b601b80": "case-d3a63b579b601b80-v-e151a62d9081"
   },
-  "site_revision_id": "site-revision-fbe3e6174594fb45",
-  "site_revision_hash": "fbe3e6174594fb45f3a41db1e8dec6ce1dd4b3c4c8cc09f5035b862931901044",
+  "site_revision_id": "site-revision-42b23bc83fe5422d",
+  "site_revision_hash": "42b23bc83fe5422d8874fd5158964530c0b847ec3fec2648d747b6a39b34cee1",
   "site_copy": {
     "site_eyebrow": "Washington climate adaptation repository",
     "site_title": "Climate Adaptation Case Study Repository",
@@ -102,15 +102,83 @@
     "footer_heading": "CAR-WASH Case Study Repository",
     "footer_summary": "Human-reviewed research staging for WASCO/CIG discussion."
   },
+  "site_design": {
+    "schema_version": 1,
+    "brand_name": "CAR-WASH",
+    "brand_subtitle": "WASCO · Climate Impacts Group",
+    "description": "Source-bounded climate adaptation case studies for Washington and the Pacific Northwest.",
+    "contact_email": "cig@uw.edu",
+    "theme": {
+      "primary": "#34735e",
+      "accent": "#57418f",
+      "background": "#f4f7f6",
+      "text": "#14273a"
+    },
+    "density": "standard",
+    "hero_image": "",
+    "hero_alt": "",
+    "navigation": [
+      {
+        "label": "Case Studies",
+        "href": "#library"
+      },
+      {
+        "label": "Using Case Studies",
+        "href": "#using-cases"
+      },
+      {
+        "label": "Methodology",
+        "href": "#methodology"
+      }
+    ],
+    "sections": [
+      {
+        "id": "hero",
+        "type": "builtin",
+        "visible": true
+      },
+      {
+        "id": "cases",
+        "type": "builtin",
+        "visible": true
+      },
+      {
+        "id": "guide",
+        "type": "builtin",
+        "visible": true
+      },
+      {
+        "id": "methodology",
+        "type": "builtin",
+        "visible": true
+      }
+    ]
+  },
   "source_commit_sha": "0000000000000000000000000000000000000000",
   "public_schema_version": "public-case-copy-v1",
   "taxonomy_version": "case-taxonomy-v1",
   "render_mode": "INTERNAL_STAGING",
+  "public_index": {
+    "schema": "car-wash-public-index-manifest-v1",
+    "path": "public-data/manifest.json",
+    "active_public_count": 27,
+    "shard_count": 1,
+    "delta": {
+      "changed_public_ids": [
+        "case-f1e1186726cc",
+        "case-f8d8e2679560"
+      ],
+      "removed_public_ids": [],
+      "changed_shards": [
+        "index/0000.json"
+      ]
+    }
+  },
   "asset_checksums": {
     "assets/washington-state-mount-rainier-nps.jpg": "7b82a55987c76e3db9e5d08a5eb566676eb523965b45dfd7f4cdcc85e5fb7201",
-    "assets/case-f1e1186726cc-seattle-rainwise-rain-garden.jpg": "f961d34e40a5bf7c7b0f4f7107038a645c1d908ffe877b47de056e15dabcb03d",
-    "assets/case-ea09a24590a7-tulalip-beaver-relocation-habitat.jpg": "3b8084948434e88c50f38ac8ebbf6a564a674dda349b5a05f89051995c0f6646",
     "assets/case-f8d8e2679560-swinomish-kiket-island-clam-garden.jpg": "f54f642780dca3767680c7274ec26441ccce4da6442673a7ccd59f1961b6bb1b",
+    "assets/case-ea09a24590a7-tulalip-beaver-relocation-habitat.jpg": "3b8084948434e88c50f38ac8ebbf6a564a674dda349b5a05f89051995c0f6646",
+    "assets/case-f1e1186726cc-seattle-rainwise-rain-garden.jpg": "f961d34e40a5bf7c7b0f4f7107038a645c1d908ffe877b47de056e15dabcb03d",
     "assets/case-202b933f7f34-quinault-taholah-project-background.jpg": "b614cbc2bae04ba87ec98cd01be1d7a5c29663c6df04d041d499f9977501ee82",
     "assets/case-3a7082ea7b13-lower-toppenish-fish-passage-reference.jpeg": "f4c2c4ef62113709caaaf9d55393c8d2fc96ed2d8bf3b5293bb9a8f0786080d2",
     "assets/case-6d73f76fa8ce-duwamish-valley-flood-barrier.jpg": "701c3d04980e66b76516330ea7d51f2bdeb7cef92e2cfea4684be006a34535d6",

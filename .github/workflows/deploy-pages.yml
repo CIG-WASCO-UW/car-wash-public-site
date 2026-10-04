@@ -1,4 +1,4 @@
-name: Deploy CAR-WASH public beta repository
+name: Deploy CAR-WASH internal staging
 on:
   push:
   workflow_dispatch:

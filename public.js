@@ -1,14 +1,17 @@
-(() => {
+(async () => {
   "use strict";
-  const cases = window.CAR_WASH_CASES || [];
-  const meta = window.CAR_WASH_META || {};
-  const siteCopy = meta.site_copy || {};
+  let cases = window.CAR_WASH_CASES || [];
+  let meta = window.CAR_WASH_META || {};
+  let siteCopy = meta.site_copy || {};
   const siteText = (key, fallback) => clean(siteCopy[key]) || fallback;
-  const assetVersion = encodeURIComponent(meta.snapshot_id || meta.dataset_version || "staging");
+  let assetVersion = encodeURIComponent(meta.snapshot_id || meta.dataset_version || "staging");
   const fileMode = location.protocol === "file:" || window.CAR_WASH_STATIC_SNAPSHOT === true;
+  const shardedMode = window.CAR_WASH_SHARDED_PUBLIC === true;
+  let publicManifest = null;
+  const loadedShards = new Set();
   const initialParams = new URLSearchParams(location.search);
-  const requestedLayout = initialParams.get("layout") || "standard";
-  const layoutMode = ["standard", "compact", "reading"].includes(requestedLayout) ? requestedLayout : "standard";
+  const requestedLayout = initialParams.get("layout");
+  let layoutMode = ["standard", "compact", "reading"].includes(requestedLayout) ? requestedLayout : (meta.site_design?.density || "standard");
   const layoutClasses = {standard:"layout-standard", compact:"layout-compact", reading:"layout-reading"};
   const previewMode = initialParams.get("preview") === "1";
   document.body.classList.add(layoutClasses[layoutMode]);
@@ -33,13 +36,81 @@
   const stageGroups = {ASSESS:"Planning and design",PLAN:"Planning and design",DESIGN:"Planning and design",PLANNING:"Planning and design",PILOT:"Pilot",IMPLEMENT:"Implementation",IMPLEMENTING:"Implementation",IMPLEMENTED:"Implementation","COMPLETED / OPERATIONAL":"Implementation",MONITOR:"Monitoring and adaptive management",EVALUATE:"Monitoring and adaptive management",ADAPT:"Monitoring and adaptive management","MONITORING / ADAPTIVE MANAGEMENT":"Monitoring and adaptive management"};
   const excerpt = (value, max = 150) => { const text = normalize(value).replace(/\s+/g, " "); return text.length > max ? `${text.slice(0, max).replace(/\s+\S*$/, "")}...` : text; };
   const arr = value => Array.isArray(value) ? value.filter(Boolean) : (value ? [value] : []);
-  const assetPath = filename => `${fileMode ? "assets" : "/assets"}/${encodeURIComponent(filename)}?v=${assetVersion}`;
-  const image = item => assetPath(item.asset_filename);
+  const editorialVersion = previewMode ? initialParams.get("case_preview") : null;
+  const assetBase = editorialVersion ? `/preview/editorial-assets/${encodeURIComponent(editorialVersion)}` : (fileMode ? "assets" : "/assets");
+  const assetPath = filename => `${assetBase}/${encodeURIComponent(filename)}?v=${assetVersion}`;
+  const publicAssetPath = value => {
+    const path = String(value || "").replace(/^\/+/, "");
+    if (editorialVersion && path.startsWith("assets/")) return `${assetBase}/${path.slice(7)}`;
+    return fileMode ? path : `/${path}`;
+  };
+  const image = item => item.asset_path ? publicAssetPath(item.asset_path) : assetPath(item.asset_filename);
   const stage = item => { const raw = clean(normalize(item.implementation_stage || item.project_date)); return stageGroups[raw.toUpperCase()] || label(raw) || "Stage not specified"; };
   const sourceDate = item => { const raw = clean(item.last_source_checked_at); const match = raw.match(/^\d{4}-\d{2}-\d{2}/); return match ? match[0] : ""; };
   const slug = item => item.slug || item.public_id;
   const casePath = item => fileMode ? `#case=${encodeURIComponent(slug(item))}` : `/library/cases/${encodeURIComponent(slug(item))}`;
   const caseBySlug = value => cases.find(item => slug(item) === value || item.public_id === value);
+
+  async function fetchPublicJson(kind, value = "") {
+    let url;
+    if (fileMode) {
+      if (kind === "manifest") url = "public-data/manifest.json";
+      else if (kind === "shard") url = `public-data/index/${encodeURIComponent(value)}.json`;
+      else if (kind === "case") {
+        const entry = publicManifest?.cases?.[value];
+        if (!entry?.detail_path) throw new Error("Published case detail is unavailable.");
+        url = `public-data/${entry.detail_path}`;
+      }
+    } else {
+      if (kind === "manifest") url = "/api/public/manifest";
+      else if (kind === "shard") url = `/api/public/index/${encodeURIComponent(value)}`;
+      else if (kind === "case") url = `/api/public/case/${encodeURIComponent(value)}`;
+    }
+    const response = await fetch(url, {headers:{Accept:"application/json"}});
+    if (!response.ok) throw new Error(`Public data request failed (${response.status}).`);
+    return response.json();
+  }
+
+  function mergeCases(incoming) {
+    const byId = new Map(cases.map(item => [item.public_id, item]));
+    incoming.forEach(item => byId.set(item.public_id, {...byId.get(item.public_id), ...item}));
+    cases = [...byId.values()];
+    window.CAR_WASH_MAP?.setCases(cases);
+  }
+
+  async function loadShard(shardNumber) {
+    const shardId = String(shardNumber).padStart(4, "0");
+    if (loadedShards.has(shardId)) return;
+    const payload = await fetchPublicJson("shard", shardId);
+    mergeCases(payload.cases || []);
+    loadedShards.add(shardId);
+  }
+
+  async function loadInitialShard() {
+    if (!shardedMode) return;
+    publicManifest = await fetchPublicJson("manifest");
+    meta = {...publicManifest, ...(publicManifest.meta || {})};
+    siteCopy = meta.site_copy || {};
+    assetVersion = encodeURIComponent(meta.snapshot_id || meta.dataset_version || "staging");
+    if (Number(publicManifest.shard_count || 0) > 0) await loadShard(0);
+  }
+
+  async function ensureAllShards() {
+    if (!publicManifest) return;
+    for (let index = 0; index < Number(publicManifest.shard_count || 0); index += 1) {
+      await loadShard(index);
+    }
+  }
+
+  async function loadCaseDetail(itemOrId) {
+    const publicId = typeof itemOrId === "string" ? itemOrId : itemOrId?.public_id;
+    if (!publicId) return null;
+    const current = cases.find(item => item.public_id === publicId);
+    if (current?.source_url || !shardedMode) return current || null;
+    const detail = await fetchPublicJson("case", publicId);
+    mergeCases([detail]);
+    return cases.find(item => item.public_id === publicId) || detail;
+  }
   const controls = {
     q:$("#q"),
     hazard:$("#hazard"),
@@ -68,18 +139,23 @@
   let originCard = null;
   const compared = new Set();
   let resultView = initialParams.get("view") === "map" ? "map" : "grid";
-  const cardExcerptLength = layoutMode === "compact" ? 92 : layoutMode === "reading" ? 250 : 156;
-  const featuredExcerptLength = layoutMode === "compact" ? 145 : layoutMode === "reading" ? 290 : 210;
+  let cardExcerptLength = layoutMode === "compact" ? 92 : layoutMode === "reading" ? 250 : 156;
+  let featuredExcerptLength = layoutMode === "compact" ? 145 : layoutMode === "reading" ? 290 : 210;
 
   function populate(select, options, formatter = value => value) { options.forEach(value => select.insertAdjacentHTML("beforeend", `<option value="${esc(value)}">${esc(formatter(value))}</option>`)); }
   function values(key) { return [...new Set(cases.flatMap(item => arr(item[key])).map(normalize).filter(Boolean))].sort(); }
-  populate(controls.hazard, values("hazards"), label);
-  populate(controls.region, values("region_tags"), label);
-  populate(controls.location_type, values("location_types"), label);
-  populate(controls.theme, values("themes"), label);
-  populate(controls.strategy, values("adaptation_strategies"), label);
-  populate(controls.stage, [...new Set(cases.map(stage))].sort());
-  populate(controls.lead_type, values("lead_organization_types"), label);
+  await loadInitialShard();
+  window.CAR_WASH_META = meta;
+  layoutMode = ["standard", "compact", "reading"].includes(requestedLayout) ? requestedLayout : (meta.site_design?.density || "standard");
+  cardExcerptLength = layoutMode === "compact" ? 92 : layoutMode === "reading" ? 250 : 156;
+  featuredExcerptLength = layoutMode === "compact" ? 145 : layoutMode === "reading" ? 290 : 210;
+  populate(controls.hazard, publicManifest?.filters?.hazards || values("hazards"), label);
+  populate(controls.region, publicManifest?.filters?.region_tags || values("region_tags"), label);
+  populate(controls.location_type, publicManifest?.filters?.location_types || values("location_types"), label);
+  populate(controls.theme, publicManifest?.filters?.themes || values("themes"), label);
+  populate(controls.strategy, publicManifest?.filters?.adaptation_strategies || values("adaptation_strategies"), label);
+  populate(controls.stage, [...new Set((publicManifest?.filters?.implementation_stage || cases.map(item => item.implementation_stage)).map(value => stage({implementation_stage:value})))].sort());
+  populate(controls.lead_type, publicManifest?.filters?.lead_organization_types || values("lead_organization_types"), label);
 
   function readUrlState() {
     const params = new URLSearchParams(location.search);
@@ -93,7 +169,11 @@
   function listUrl() {
     const params = new URLSearchParams();
     if (layoutMode !== "standard") params.set("layout", layoutMode);
-    if (previewMode) params.set("preview", "1");
+    if (previewMode) {
+      params.set("preview", "1");
+      const draftVersion = initialParams.get("case_preview");
+      if (draftVersion) params.set("case_preview", draftVersion);
+    }
     if (activeCollection) params.set("collection", activeCollection);
     if (resultView !== "grid") params.set("view", resultView);
     Object.entries(controls).forEach(([key, control]) => { const value = control.value.trim(); if (value && !(key === "sort" && value === "curated")) params.set(key, value); });
@@ -166,6 +246,20 @@
     $("#active-filters").innerHTML = selected.map(([key, value]) => `<button type="button" class="filter-chip" data-clear="${key}">${esc(readable(key, value))} <span aria-hidden="true">&times;</span></button>`).join("") + (selected.length > 1 ? `<button type="button" class="filter-chip clear-all" data-clear="all">Clear all</button>` : "");
   }
 
+  function hasActiveListQuery() {
+    return Boolean(
+      activeCollection
+      || controls.q.value.trim()
+      || controls.hazard.value
+      || controls.region.value
+      || controls.location_type.value
+      || controls.theme.value
+      || controls.strategy.value
+      || controls.stage.value
+      || controls.lead_type.value
+    );
+  }
+
   function curatedFeatured() {
     return caseBySlug(meta.featured_public_id || "") || cases.find(item => item.collection === (meta.primary_collection || "Washington and Pacific Northwest")) || cases[0];
   }
@@ -184,13 +278,19 @@
       const order = Number(b.collection === primary) - Number(a.collection === primary);
       return order || normalize(a.title).localeCompare(normalize(b.title));
     });
-    const countText = `${filteredRows.length} case ${filteredRows.length === 1 ? "study" : "studies"}`;
+    const allShardsLoaded = !publicManifest || loadedShards.size >= Number(publicManifest.shard_count || 0);
+    const unfiltered = !activeCollection && !controls.q.value.trim() && !controls.hazard.value && !controls.region.value && !controls.location_type.value && !controls.theme.value && !controls.strategy.value && !controls.stage.value && !controls.lead_type.value;
+    const resultCount = publicManifest && unfiltered && !allShardsLoaded
+      ? Number(publicManifest.active_public_count || filteredRows.length)
+      : filteredRows.length;
+    const countText = `${resultCount} case ${resultCount === 1 ? "study" : "studies"}`;
     $("#count").textContent = countText;
     $("#mobile-count").textContent = countText;
     $("#grid").innerHTML = filteredRows.slice(0, visibleLimit).map(card).join("") || `<p class="empty">No case studies match these filters.</p>`;
     $("#grid").classList.add("ready");
-    $("#load-more").hidden = filteredRows.length <= visibleLimit;
-    $("#load-more").textContent = `Load more (${filteredRows.length - visibleLimit} remaining)`;
+    const remaining = Math.max(0, resultCount - visibleLimit);
+    $("#load-more").hidden = remaining === 0;
+    $("#load-more").textContent = `Load more (${remaining} remaining)`;
     chips();
     wireCaseAnchors();
     wireCompareChecks();
@@ -198,7 +298,7 @@
     if (syncUrl) updateListUrl();
   }
 
-  function setResultView(view) {
+  async function setResultView(view) {
     if (view === "compare") {
       resultView = "grid";
       document.body.classList.add("compare-select-mode");
@@ -206,6 +306,10 @@
     } else {
       resultView = view === "map" ? "map" : "grid";
       document.body.classList.remove("compare-select-mode");
+    }
+    if (resultView === "map") {
+      await ensureAllShards();
+      draw({syncUrl:false});
     }
     $("#grid-view").hidden = resultView === "map";
     $("#map-view").hidden = resultView !== "map";
@@ -229,7 +333,7 @@
   }
 
   function setPageInert(value) {
-    [$(".prototype-label"), $(".site-header"), $(".hero"), $("main"), $(".site-footer"), $("#compare-tray")].forEach(element => { if (!element) return; element.inert = value; if (value) element.setAttribute("aria-hidden", "true"); else element.removeAttribute("aria-hidden"); });
+    [$(".prototype-label"), $(".site-header"), $("#site-sections-flow"), $(".hero"), $("main"), $(".site-footer"), $("#compare-tray")].forEach(element => { if (!element) return; element.inert = value; if (value) element.setAttribute("aria-hidden", "true"); else element.removeAttribute("aria-hidden"); });
     document.body.classList.toggle("modal-open", value);
   }
 
@@ -249,7 +353,8 @@
     return cases.filter(candidate => candidate.public_id !== item.public_id).map(candidate => ({candidate, score: arr(candidate.hazards).map(normalize).filter(value => hazards.has(value)).length + Number(candidate.collection === item.collection)})).filter(row => row.score > 0).sort((a,b) => b.score - a.score).slice(0,3).map(row => row.candidate);
   }
 
-  function openCase(item, {push = true, trigger = null} = {}) {
+  async function openCase(item, {push = true, trigger = null} = {}) {
+    item = await loadCaseDetail(item);
     if (!item) return;
     returnFocus = trigger || document.activeElement;
     originCard?.classList.remove("is-origin");
@@ -279,7 +384,7 @@
     detail.querySelector("[data-copy-link]").addEventListener("click", () => copyText(location.href, detail.querySelector(".utility-status")));
     detail.querySelector("[data-copy-citation]").addEventListener("click", () => copyText(citation(item), detail.querySelector(".utility-status")));
     detail.querySelector("[data-print]").addEventListener("click", () => { document.body.classList.add("print-detail"); window.print(); setTimeout(() => document.body.classList.remove("print-detail"), 0); });
-    detail.querySelectorAll("[data-related]").forEach(link => link.addEventListener("click", event => { event.preventDefault(); const candidate = caseBySlug(link.dataset.related); history.replaceState({view:"case", slug:slug(candidate), list:listUrl()}, "", caseHref(candidate)); openCase(candidate, {push:false, trigger:link}); }));
+    detail.querySelectorAll("[data-related]").forEach(link => link.addEventListener("click", async event => { event.preventDefault(); const candidate = caseBySlug(link.dataset.related); if (!candidate) return; history.replaceState({view:"case", slug:slug(candidate), list:listUrl()}, "", caseHref(candidate)); await openCase(candidate, {push:false, trigger:link}); }));
   }
 
   function closeCase({useHistory = true} = {}) {
@@ -295,8 +400,13 @@
     if (returnFocus?.isConnected) returnFocus.focus(); else $("#count").focus?.();
   }
 
+  const wiredCaseAnchors = new WeakSet();
   function wireCaseAnchors() {
-    $$("a.open-case").forEach(link => link.addEventListener("click", event => { if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return; const item = caseBySlug(link.dataset.caseSlug); if (!item) return; event.preventDefault(); openCase(item, {push:true, trigger:link}); }));
+    $$("a.open-case").forEach(link => {
+      if (wiredCaseAnchors.has(link)) return;
+      wiredCaseAnchors.add(link);
+      link.addEventListener("click", async event => { if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return; const item = caseBySlug(link.dataset.caseSlug); if (!item) return; event.preventDefault(); await openCase(item, {push:true, trigger:link}); });
+    });
   }
 
   function updateCompareTray(message = "") {
@@ -318,10 +428,12 @@
     }));
   }
 
-  function openCompare() {
-    const selected = [...compared]
+  async function openCompare() {
+    await ensureAllShards();
+    const selectedCards = [...compared]
       .map(id => cases.find(item => item.public_id === id))
       .filter(Boolean);
+    const selected = (await Promise.all(selectedCards.map(loadCaseDetail))).filter(Boolean);
     if (selected.length < 2) return;
     const rows = [
       ["Place and setting", item => item.location || item.region],
@@ -347,7 +459,9 @@
   }
 
   function csvCell(value) { return `"${String(value ?? "").replaceAll('"', '""')}"`; }
-  function exportCsv() {
+  async function exportCsv() {
+    await ensureAllShards();
+    draw({syncUrl:false});
     const fields = [["title", item => item.title], ["location", item => item.location || item.region], ["collection", item => item.collection], ["hazards", item => arr(item.hazards).join("; ")], ["themes", item => arr(item.themes).join("; ")], ["implementation_stage", stage], ["adaptation_action", item => item.adaptation_action], ["source_url", item => item.source_url], ["last_source_checked_at", sourceDate]];
     const csv = [fields.map(([name]) => csvCell(name)).join(","), ...filteredRows.map(item => fields.map(([,getter]) => csvCell(getter(item))).join(","))].join("\r\n");
     const link = document.createElement("a"); link.href = URL.createObjectURL(new Blob([csv], {type:"text/csv;charset=utf-8"})); link.download = `car-wash-filtered-${meta.snapshot_id || "staging"}.csv`; link.click(); URL.revokeObjectURL(link.href);
@@ -356,10 +470,19 @@
   function openFilters() { const panel = $("#filter-panel"); $("#filter-backdrop").hidden = false; panel.classList.add("open"); $("#filter-trigger").setAttribute("aria-expanded", "true"); document.body.classList.add("drawer-open"); focusables(panel)[0]?.focus(); }
   function closeFilters() { const panel = $("#filter-panel"); panel.classList.remove("open"); $("#filter-backdrop").hidden = true; $("#filter-trigger").setAttribute("aria-expanded", "false"); document.body.classList.remove("drawer-open"); $("#filter-trigger").focus(); }
 
-  function routeFromLocation() {
-    readUrlState(); draw({syncUrl:false});
+  async function routeFromLocation() {
+    readUrlState();
+    if (shardedMode && hasActiveListQuery()) await ensureAllShards();
+    draw({syncUrl:false});
     const activeSlug = routeSlug();
-    if (activeSlug) { const item = caseBySlug(activeSlug); if (item) openCase(item, {push:false}); else history.replaceState({view:"list"}, "", listUrl()); }
+    if (activeSlug) {
+      let item = caseBySlug(activeSlug);
+      if (!item && publicManifest) {
+        const entry = Object.entries(publicManifest.cases || {}).find(([publicId, value]) => publicId === activeSlug || value.slug === activeSlug);
+        if (entry) item = await loadCaseDetail(entry[0]);
+      }
+      if (item) await openCase(item, {push:false}); else history.replaceState({view:"list"}, "", listUrl());
+    }
     else if (!$("#case-overlay").hidden) closeCase({useHistory:false});
   }
 
@@ -393,15 +516,25 @@
   function openTour() { showTourStep(0); $("#tour-overlay").hidden = false; setPageInert(true); $("#tour-close").focus(); }
   function closeTour() { $("#tour-overlay").hidden = true; setPageInert(false); $("#tour-trigger").focus(); }
 
-  Object.values(controls).forEach(control => control.addEventListener("input", () => { visibleLimit = defaultVisibleLimit(); draw(); }));
+  Object.values(controls).forEach(control => control.addEventListener("input", async () => { visibleLimit = defaultVisibleLimit(); await ensureAllShards(); draw(); }));
   $("#active-filters").addEventListener("click", event => { const key = event.target.closest("[data-clear]")?.dataset.clear; if (!key) return; if (key === "all") { activeCollection = ""; Object.entries(controls).forEach(([name, control]) => { control.value = name === "sort" ? "collection" : ""; }); } else if (key === "collection") activeCollection = ""; else controls[key].value = ""; $$(".tab").forEach(tab => tab.classList.toggle("active", tab.dataset.collection === activeCollection)); draw(); });
-  $$(".tab").forEach(tab => tab.addEventListener("click", () => { activeCollection = tab.dataset.collection; $$(".tab").forEach(item => item.classList.toggle("active", item === tab)); visibleLimit = defaultVisibleLimit(); draw(); }));
-  $("#load-more").addEventListener("click", () => { visibleLimit += matchMedia("(max-width: 719px)").matches ? 6 : 12; draw(); });
-  $("#export-csv").addEventListener("click", exportCsv);
+  $$(".tab").forEach(tab => tab.addEventListener("click", async () => { activeCollection = tab.dataset.collection; $$(".tab").forEach(item => item.classList.toggle("active", item === tab)); visibleLimit = defaultVisibleLimit(); await ensureAllShards(); draw(); }));
+  $("#load-more").addEventListener("click", async () => {
+    const increment = matchMedia("(max-width: 719px)").matches ? 6 : 12;
+    const nextVisibleLimit = visibleLimit + increment;
+    const nextShard = publicManifest && nextVisibleLimit > filteredRows.length
+      ? [...Array(Number(publicManifest.shard_count || 0)).keys()].find(index => !loadedShards.has(String(index).padStart(4, "0")))
+      : undefined;
+    if (nextShard !== undefined) await loadShard(nextShard);
+    visibleLimit = nextVisibleLimit;
+    draw();
+  });
+  $("#export-csv").addEventListener("click", () => exportCsv());
   $$("[data-view]").forEach(button => button.addEventListener("click", () => setResultView(button.dataset.view)));
-  document.addEventListener("carwash:open-case", event => {
-    const item = cases.find(candidate => candidate.public_id === event.detail?.publicId);
-    if (item) openCase(item, {push:true, trigger:document.querySelector(`[data-map-case="${CSS.escape(item.public_id)}"]`)});
+  document.addEventListener("carwash:open-case", async event => {
+    const publicId = event.detail?.publicId;
+    const item = cases.find(candidate => candidate.public_id === publicId) || await loadCaseDetail(publicId);
+    if (item) await openCase(item, {push:true, trigger:document.querySelector(`[data-map-case="${CSS.escape(item.public_id)}"]`)});
   });
   $("#filter-trigger").addEventListener("click", openFilters); $("#filter-close").addEventListener("click", closeFilters); $("#filter-backdrop").addEventListener("click", closeFilters); $("#apply-filters").addEventListener("click", closeFilters);
   $("#case-overlay").addEventListener("click", event => { if (event.target.id === "case-overlay") closeCase(); });
@@ -421,19 +554,31 @@
     if (!$("#compare-overlay").hidden) { if (event.key === "Escape") closeCompare(); else trap(event, $("#compare-detail")); return; }
     if ($("#filter-panel").classList.contains("open")) { if (event.key === "Escape") closeFilters(); else trap(event, $("#filter-panel")); }
   });
-  addEventListener("popstate", routeFromLocation);
+  addEventListener("popstate", () => routeFromLocation());
   if (fileMode) addEventListener("hashchange", routeFromLocation);
   addEventListener("afterprint", () => document.body.classList.remove("print-detail"));
 
   $("#snapshot-meta").textContent = meta.render_mode === "PUBLIC_PRODUCTION"
     ? `Published snapshot ${meta.snapshot_id || meta.dataset_version || ""}.`
     : `${previewMode ? "Local website preview" : "Internal staging snapshot"} ${meta.snapshot_id || meta.dataset_version || "pending"}. No public-use approval is implied.`;
-  $("#footer-version").textContent = `V${meta.product_version || "3.6.7"}`;
+  $("#footer-version").textContent = `V${meta.product_version || "3.7.3"}`;
   $$('[data-site-copy]').forEach(node => {
     const value = clean(siteCopy[node.dataset.siteCopy]);
     if (value) node.textContent = value;
   });
-  document.title = `CAR-WASH ${siteText("site_title", "Climate Adaptation Case Study Repository")}`;
-  $("#hero-case-count").textContent = String(cases.length);
-  window.CAR_WASH_MAP?.init(); readUrlState(); drawFeatured(); draw({syncUrl:false}); setResultView(resultView); wireCaseAnchors(); routeFromLocation(); locatePreviewTarget();
+  let websiteReady = false;
+  addEventListener("car-wash-site-design-applied", event => {
+    siteCopy = event.detail.siteCopy || siteCopy;
+    layoutMode = event.detail.density || layoutMode;
+    cardExcerptLength = layoutMode === "compact" ? 92 : layoutMode === "reading" ? 250 : 156;
+    featuredExcerptLength = layoutMode === "compact" ? 145 : layoutMode === "reading" ? 290 : 210;
+    if (websiteReady) { drawFeatured(); draw({syncUrl:false}); }
+  });
+  window.CAR_WASH_SITE_DESIGN?.apply(meta.site_design, siteCopy);
+  document.title = `${meta.site_design?.brand_name || "CAR-WASH"} ${siteText("site_title", "Climate Adaptation Case Study Repository")}`;
+  $("#hero-case-count").textContent = String(publicManifest?.active_public_count ?? cases.length);
+  window.CAR_WASH_MAP?.setCases(cases);
+  window.CAR_WASH_MAP?.init(); readUrlState(); drawFeatured(); draw({syncUrl:false}); await setResultView(resultView); wireCaseAnchors(); await routeFromLocation(); locatePreviewTarget();
+  websiteReady = true;
+  if (previewMode && window.parent !== window) window.parent.postMessage({type:"car-wash-site-preview-ready"}, location.origin);
 })();

@@ -2,14 +2,41 @@
   "use strict";
 
   const states = window.CAR_WASH_US_STATES || {features: []};
-  const mapCases = window.CAR_WASH_MAP_CASES || {features: []};
+  let mapCases = window.CAR_WASH_MAP_CASES || {features: []};
   const climate = window.CAR_WASH_CLIMATE_CONTEXT || {layer_status: "REFERENCE_ONLY"};
-  const byId = new Map(mapCases.features.map(feature => [feature.properties.public_id, feature]));
+  let byId = new Map(mapCases.features.map(feature => [feature.properties.public_id, feature]));
   const ns = "http://www.w3.org/2000/svg";
   let selectedId = "";
 
   function esc(value) {
     return String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+  }
+
+  function setCases(rows) {
+    const features = (rows || [])
+      .filter(row => row.latitude != null && row.longitude != null && row.map_visible !== false)
+      .map(row => ({
+        type:"Feature",
+        geometry:{type:"Point", coordinates:[Number(row.longitude), Number(row.latitude)]},
+        properties:{
+          public_id:row.public_id,
+          title:row.title,
+          summary:row.summary,
+          location:row.location || row.region,
+          implementation_stage:row.implementation_stage,
+          location_precision:row.location_precision,
+          primary_hazard:row.primary_hazard || row.hazards?.[0] || "Other",
+          hazard_label:row.hazard_label || row.hazards?.[0] || "Adaptation case",
+          hazard_color:row.hazard_color || "#5D6570",
+        },
+      }));
+    mapCases = {type:"FeatureCollection", features};
+    byId = new Map(features.map(feature => [feature.properties.public_id, feature]));
+    const legend = document.querySelector("#map-hazard-legend");
+    if (legend) {
+      const styles = [...new Map(features.map(feature => [feature.properties.primary_hazard, feature.properties])).values()];
+      legend.innerHTML = styles.map(item => `<span data-hazard="${esc(item.primary_hazard)}"><i></i>${esc(item.hazard_label)}</span>`).join("");
+    }
   }
 
   function excerpt(value, limit = 440) {
@@ -144,5 +171,5 @@
     detail(null);
   }
 
-  window.CAR_WASH_MAP = {init, render};
+  window.CAR_WASH_MAP = {init, render, setCases};
 })();

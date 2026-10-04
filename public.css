@@ -90,6 +90,19 @@ a { color: inherit; }
 .brand-copy strong { color: var(--green); font-size: 13px; letter-spacing: .06em; }
 .brand-copy > span { font: 700 17px/1.1 var(--serif); }
 .brand-copy small { color: #687786; font-size: 10px; font-weight: 700; letter-spacing: .02em; }
+.team-brand-marks {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+  margin-right: 34px;
+  padding-left: 20px;
+  border-left: 1px solid var(--line);
+}
+.team-brand-marks > span { width: 1px; height: 28px; background: var(--line); }
+.team-mark { display: block; width: auto; object-fit: contain; }
+.team-mark.wasco-mark { height: 36px; }
+.team-mark.cig-mark { height: 45px; }
 .site-header nav { display: flex; align-self: stretch; gap: 30px; }
 .site-header nav a {
   display: flex;
@@ -829,6 +842,7 @@ body.modal-open main, body.modal-open .site-header, body.modal-open .hero, body.
 }
 
 @media (max-width: 1099px) {
+  .team-brand-marks { display: none; }
   .research-atlas-hero { grid-template-columns: 1fr; min-height: 430px; gap: 34px; }
   .hero-guide { max-width: 490px; }
   .portfolio-intro { grid-template-columns: 1fr; gap: 18px; }
@@ -846,13 +860,27 @@ body.modal-open main, body.modal-open .site-header, body.modal-open .hero, body.
   .prototype-label { align-items: flex-start; padding: 8px 14px; }
   .prototype-label > span { max-width: 62%; }
   .site-header { height: auto; min-height: 68px; flex-wrap: wrap; padding: 9px 16px; }
+  .team-brand-marks {
+    display: flex;
+    order: 3;
+    flex: 1 0 100%;
+    justify-content: flex-start;
+    min-height: 42px;
+    margin: 7px 0 0;
+    padding: 7px 0 0 53px;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+  .team-brand-marks > span { height: 22px; }
+  .team-mark.wasco-mark { height: 26px; }
+  .team-mark.cig-mark { height: 33px; }
   .brand { gap: 9px; }
   .uw-logo-frame { width: 46px; min-width: 46px; padding: 4px; }
   .uw-block-w { width: 38px; }
   .brand-copy > span { display: none; }
   .brand-copy small { font-size: 9px; }
   .menu-button { display: block; }
-  .site-header nav { display: none; flex: 1 0 100%; gap: 0; }
+  .site-header nav { display: none; order: 4; flex: 1 0 100%; gap: 0; }
   .site-header nav.open { display: grid; }
   .site-header nav a { padding: 11px 0; border-bottom: 1px solid var(--line); }
   .research-atlas-hero { min-height: 420px; padding: 34px 20px; background-position: 56% center; }
