@@ -1,3 +1,21 @@
+function createPublicSnapshotCheck({snapshotId, manifestUrl, fetchJson, currentUrl, navigate}) {
+  let inFlight = false;
+  return async function checkPublishedSnapshot() {
+    if (inFlight || !snapshotId) return;
+    inFlight = true;
+    try {
+      const separator = manifestUrl.includes("?") ? "&" : "?";
+      const next = await fetchJson(`${manifestUrl}${separator}_fresh=${Date.now()}`);
+      if (typeof next?.snapshot_id !== "string" || !next.snapshot_id || next.snapshot_id === snapshotId) return;
+      const url = new URL(currentUrl());
+      url.searchParams.set("_snapshot", next.snapshot_id);
+      navigate(url.href);
+    } catch (_) {
+      // Offline readers retain the last complete published snapshot.
+    } finally { inFlight = false; }
+  };
+}
+
 (async () => {
   "use strict";
   let cases = window.CAR_WASH_CASES || [];
@@ -580,5 +598,25 @@
   window.CAR_WASH_MAP?.setCases(cases);
   window.CAR_WASH_MAP?.init(); readUrlState(); drawFeatured(); draw({syncUrl:false}); await setResultView(resultView); wireCaseAnchors(); await routeFromLocation(); locatePreviewTarget();
   websiteReady = true;
+  if (!previewMode && !editorialVersion && location.protocol !== "file:") {
+    const checkSnapshot = createPublicSnapshotCheck({
+      snapshotId: meta.snapshot_id,
+      manifestUrl: fileMode ? "public-data/manifest.json" : "/api/public/manifest",
+      fetchJson: async url => {
+        const controller = new AbortController();
+        const deadline = setTimeout(() => controller.abort(), 10000);
+        try {
+          const response = await fetch(url, {cache:"no-store", signal:controller.signal, headers:{Accept:"application/json"}});
+          if (!response.ok) throw new Error("Snapshot check unavailable");
+          return await response.json();
+        } finally { clearTimeout(deadline); }
+      },
+      currentUrl: () => location.href,
+      navigate: url => location.replace(url),
+    });
+    setInterval(() => { if (!document.hidden) checkSnapshot(); }, 30000);
+    addEventListener("focus", checkSnapshot);
+    document.addEventListener("visibilitychange", () => { if (!document.hidden) checkSnapshot(); });
+  }
   if (previewMode && window.parent !== window) window.parent.postMessage({type:"car-wash-site-preview-ready"}, location.origin);
 })();

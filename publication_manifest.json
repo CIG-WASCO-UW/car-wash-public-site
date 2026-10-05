@@ -1,12 +1,12 @@
 {
-  "snapshot_id": "staging-20261004T201158-c5b2675f",
-  "previous_snapshot_id": "staging-20260820T195816-0299cc75",
+  "snapshot_id": "staging-20261005T025215-84d0889c",
+  "previous_snapshot_id": "staging-20261004T201158-c5b2675f",
   "dataset_version": "car-wash-v3-7-3",
   "product_version": "3.7.3",
-  "public_ui_fingerprint": "2c6aaa6228f5919139463db92a44e635d8eda43084f123aad89c2c188794edd7",
-  "created_at": "2026-10-04T20:11:58.370224+00:00",
-  "activated_at": "2026-10-04T20:11:58.370224+00:00",
-  "case_count": 27,
+  "public_ui_fingerprint": "5f64740c2eb2481c83bbb51dcf80ccea501448f28dcf34e31170d39c4d0ec290",
+  "created_at": "2026-10-05T02:52:15.217656+00:00",
+  "activated_at": "2026-10-05T02:52:15.217656+00:00",
+  "case_count": 28,
   "release_profile": "INTERNAL_FULL",
   "asset_mode": "INTERNAL_REFERENCE_OR_GENERATED",
   "asset_generator_version": null,
@@ -37,7 +37,8 @@
     "case-692e73b7e651": "ae90a5d667a6db2e5f6905ad8a64a5a5e33554e5ac73056274f921e1d4ea7c19",
     "case-4ede7f783a7c": "627fc500d253188161946cb83c171f1285de2e70980e23214a863f1c77fd9336",
     "case-65449b839105": "d6c08396458ad91473ffdb2354210af887dddb9f31a60152a0f762634b03e207",
-    "case-d3a63b579b60": "515d0c708d4cfc0522daef917af0d7c05b93d54d0d41ed92b188c9aa871d447e"
+    "case-d3a63b579b60": "515d0c708d4cfc0522daef917af0d7c05b93d54d0d41ed92b188c9aa871d447e",
+    "case-bcea2b291dd5": "6c719df536f1ffa6c2fca725fa888aeff25988444b977bd971a9794411ace92f"
   },
   "visibility": "local-editorial-preview-only",
   "production_deployment": "DISABLED",
@@ -47,24 +48,29 @@
   "taxonomy_version": "case-taxonomy-v1",
   "render_mode": "INTERNAL_STAGING",
   "site_copy": {
-    "site_eyebrow": "Washington climate adaptation repository",
-    "site_title": "Climate Adaptation Case Study Repository",
-    "hero_summary": "Explore source-linked examples of how communities and institutions are responding to climate risks in Washington and beyond.",
     "beta_note": "Beta library. The collection and search coverage are still limited; use the original source when assessing a case.",
-    "hero_scope": "source-linked case records in one human-reviewed working collection.",
-    "guide_kicker": "Why case studies?",
+    "footer_heading": "CAR-WASH Case Study Repository",
+    "footer_summary": "Human-reviewed research staging for WASCO/CIG discussion.",
     "guide_heading": "See the action, evidence, and limits behind each example.",
+    "guide_kicker": "Why case studies?",
     "guide_link_label": "How to use this repository",
+    "hero_scope": "source-linked case records in one human-reviewed working collection.",
+    "hero_summary": "Explore source-linked examples of how communities and institutions are responding to climate risks in Washington and beyond.",
+    "map_boundary_heading": "Read the layers separately.",
+    "map_boundary_summary": "Case density shows where this repository has examples; it does not show where hazards are increasing.",
+    "map_eyebrow": "Case map",
+    "map_heading": "Published cases by location and climate pressure",
+    "methodology_heading": "Methodology and definitions",
+    "methodology_summary": "Cases are screened for adaptation relevance, bounded action, usable source evidence, and review needs. Inclusion in this beta repository does not by itself establish effectiveness or publication approval.",
+    "original_source_label": "Open original source",
     "portfolio_eyebrow": "Explore the repository",
     "portfolio_heading": "Adaptation in practice, with the evidence attached.",
     "portfolio_summary": "Move from a statewide view into specific actions, implementation stages, reported evidence, and limits. Every card opens a source-linked research record.",
-    "map_eyebrow": "Case map",
-    "map_heading": "Published cases by location and climate pressure",
-    "map_boundary_heading": "Read the layers separately.",
-    "map_boundary_summary": "Case density shows where this repository has examples; it does not show where hazards are increasing.",
+    "site_eyebrow": "Washington climate adaptation repository",
+    "site_title": "Climate Adaptation Case Study Repository",
+    "source_date_label": "Last updated",
     "use_eyebrow": "Using the repository",
     "use_heading": "How to use these case studies",
-    "use_summary": "Use the filters to find relevant examples, read the original source, and consider local context before applying an approach elsewhere.",
     "use_step_1_heading": "1. Find a relevant action",
     "use_step_1_summary": "Filter by hazard, geography, sector, strategy, and implementation stage. Each record focuses on a specific action or program.",
     "use_step_2_heading": "2. Check the evidence",
@@ -73,42 +79,31 @@
     "use_step_3_summary": "Review governance, scale, climate mechanism, implementation stage, and site constraints before transferring a lesson.",
     "use_step_4_heading": "4. Cite and improve",
     "use_step_4_summary": "Use the citation and original-source link. Report broken links, inaccurate fields, or accessibility problems to the project team.",
-    "methodology_heading": "Methodology and definitions",
-    "methodology_summary": "Cases are screened for adaptation relevance, bounded action, usable source evidence, and review needs. Inclusion in this beta repository does not by itself establish effectiveness or publication approval.",
-    "source_date_label": "Last updated",
-    "original_source_label": "Open original source",
-    "footer_heading": "CAR-WASH Case Study Repository",
-    "footer_summary": "Human-reviewed research staging for WASCO/CIG discussion."
+    "use_summary": "Use the filters to find relevant examples, read the original source, and consider local context before applying an approach elsewhere."
   },
   "site_design": {
-    "schema_version": 1,
     "brand_name": "CAR-WASH",
     "brand_subtitle": "WASCO · Climate Impacts Group",
-    "description": "Source-bounded climate adaptation case studies for Washington and the Pacific Northwest.",
     "contact_email": "cig@uw.edu",
-    "theme": {
-      "primary": "#34735e",
-      "accent": "#57418f",
-      "background": "#f4f7f6",
-      "text": "#14273a"
-    },
     "density": "standard",
-    "hero_image": "",
+    "description": "Source-bounded climate adaptation case studies for Washington and the Pacific Northwest.",
     "hero_alt": "",
+    "hero_image": "",
     "navigation": [
       {
-        "label": "Case Studies",
-        "href": "#library"
+        "href": "#library",
+        "label": "Case Studies"
       },
       {
-        "label": "Using Case Studies",
-        "href": "#using-cases"
+        "href": "#using-cases",
+        "label": "Using Case Studies"
       },
       {
-        "label": "Methodology",
-        "href": "#methodology"
+        "href": "#methodology",
+        "label": "Methodology"
       }
     ],
+    "schema_version": 1,
     "sections": [
       {
         "id": "hero",
@@ -130,7 +125,13 @@
         "type": "builtin",
         "visible": true
       }
-    ]
+    ],
+    "theme": {
+      "accent": "#57418f",
+      "background": "#f4f7f6",
+      "primary": "#34735e",
+      "text": "#14273a"
+    }
   },
   "site_image_credits": {},
   "site_revision_id": "site-revision-42b23bc83fe5422d",
@@ -162,7 +163,8 @@
     "case-692e73b7e6518e1e": "case-692e73b7e6518e1e-v-48200155e4c0",
     "case-4ede7f783a7ccfd3": "case-4ede7f783a7ccfd3-v-ee13796a0c2a",
     "case-65449b8391057437": "case-65449b8391057437-v-59913b1fb364",
-    "case-d3a63b579b601b80": "case-d3a63b579b601b80-v-e151a62d9081"
+    "case-d3a63b579b601b80": "case-d3a63b579b601b80-v-e151a62d9081",
+    "case-1ac4d4e7a3cf0e9a": "editorial-bcf5ef04351948f0"
   },
   "primary_collection": "Washington and Pacific Northwest",
   "external_collection": "Transferable Examples from Other Regions",
@@ -170,12 +172,11 @@
   "public_index": {
     "schema": "car-wash-public-index-manifest-v1",
     "path": "public-data/manifest.json",
-    "active_public_count": 27,
+    "active_public_count": 28,
     "shard_count": 1,
     "delta": {
       "changed_public_ids": [
-        "case-f1e1186726cc",
-        "case-f8d8e2679560"
+        "case-bcea2b291dd5"
       ],
       "removed_public_ids": [],
       "changed_shards": [
