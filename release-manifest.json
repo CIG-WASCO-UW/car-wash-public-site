@@ -1,8 +1,8 @@
 {
   "schema": "car-wash-public-release-manifest-v1",
-  "snapshot_id": "staging-20261005T031444-8a61d86f",
-  "generated_at": "2026-10-05T03:14:44.125116+00:00",
-  "case_count": 28,
+  "snapshot_id": "staging-20261005T171402-12e2d8b5",
+  "generated_at": "2026-10-05T17:14:02.333341+00:00",
+  "case_count": 29,
   "release_profile": "INTERNAL_FULL",
   "visibility": "local-editorial-preview-only",
   "production_deployment": "DISABLED",
@@ -36,6 +36,7 @@
     "case-4ede7f783a7c": "627fc500d253188161946cb83c171f1285de2e70980e23214a863f1c77fd9336",
     "case-65449b839105": "d6c08396458ad91473ffdb2354210af887dddb9f31a60152a0f762634b03e207",
     "case-d3a63b579b60": "515d0c708d4cfc0522daef917af0d7c05b93d54d0d41ed92b188c9aa871d447e",
+    "case-ff03cf75659e": "cbda0b7231037872c00d2c67de9e4f1dc295701514bb7b6bc4f7f09bdb59e592",
     "case-bcea2b291dd5": "957cf230e5c7a864f861121d5d8d6873e304e6988f1bd5fa47e6813f5dc93183"
   },
   "exact_case_versions": {
@@ -66,7 +67,8 @@
     "case-4ede7f783a7ccfd3": "case-4ede7f783a7ccfd3-v-ee13796a0c2a",
     "case-65449b8391057437": "case-65449b8391057437-v-59913b1fb364",
     "case-d3a63b579b601b80": "case-d3a63b579b601b80-v-e151a62d9081",
-    "case-1ac4d4e7a3cf0e9a": "editorial-6205fd99751142a0"
+    "case-1ac4d4e7a3cf0e9a": "editorial-6205fd99751142a0",
+    "case-a6483fa8f15cdb49": "editorial-e09a5579ffbd4f19"
   },
   "site_revision_id": "site-revision-42b23bc83fe5422d",
   "site_revision_hash": "42b23bc83fe5422d8874fd5158964530c0b847ec3fec2648d747b6a39b34cee1",
@@ -156,19 +158,24 @@
       "text": "#14273a"
     }
   },
-  "source_commit_sha": "0000000000000000000000000000000000000000",
+  "source_commit_sha": "1288dcf2727e15de0eb3e7f75b9a5b3c6f5c56c4",
   "public_schema_version": "public-case-copy-v1",
   "taxonomy_version": "case-taxonomy-v1",
   "render_mode": "INTERNAL_STAGING",
   "public_index": {
     "schema": "car-wash-public-index-manifest-v1",
     "path": "public-data/manifest.json",
-    "active_public_count": 28,
+    "active_public_count": 29,
     "shard_count": 1,
     "delta": {
-      "changed_public_ids": [],
+      "changed_public_ids": [
+        "case-bcea2b291dd5",
+        "case-ff03cf75659e"
+      ],
       "removed_public_ids": [],
-      "changed_shards": []
+      "changed_shards": [
+        "index/0000.json"
+      ]
     }
   },
   "asset_checksums": {
@@ -200,6 +207,7 @@
     "assets/case-4ede7f783a7c-current-012-invasive-plants.jpg": "20680e2ac92b33354faa373351337fba77e55884b727e7dc75ad75e265ee7aa0",
     "assets/case-65449b839105-current-006-yakama.jpg": "d887ec17cdcfa7bb4a21df95b5017881d655151610f665270800bebf11000742",
     "assets/case-d3a63b579b60-current-mismatch-tulalip.jpg": "aeb7da47694070acc057f14ae17394944afabd1b19269279839d2c5a8595ab3b",
-    "assets/case-bcea2b291dd5-island-sea-level.svg": "d268a3615b591754fd7c70c78dadd8233d26feb7142661b53c17019bc99921cb"
+    "assets/case-ff03cf75659e-island-sea-level.svg": "d268a3615b591754fd7c70c78dadd8233d26feb7142661b53c17019bc99921cb",
+    "assets/case-bcea2b291dd5-yakama-riparian.svg": "82c691ee78c1c6df6126a422a14a597ae3a5244ba2d57e101508a8fe1a2850ed"
   }
 }
