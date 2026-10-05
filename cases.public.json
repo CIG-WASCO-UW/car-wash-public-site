@@ -1,13 +1,13 @@
 {
   "meta": {
-    "snapshot_id": "staging-20261005T171402-12e2d8b5",
-    "previous_snapshot_id": "staging-20261005T031444-8a61d86f",
+    "snapshot_id": "staging-20261005T194201-f73ad3fd",
+    "previous_snapshot_id": "staging-20261005T171402-12e2d8b5",
     "dataset_version": "car-wash-v3-7-3",
     "product_version": "3.7.3",
     "public_ui_fingerprint": "5f64740c2eb2481c83bbb51dcf80ccea501448f28dcf34e31170d39c4d0ec290",
-    "created_at": "2026-10-05T17:14:02.333341+00:00",
-    "activated_at": "2026-10-05T17:14:02.333341+00:00",
-    "case_count": 29,
+    "created_at": "2026-10-05T19:42:01.431372+00:00",
+    "activated_at": "2026-10-05T19:42:01.431372+00:00",
+    "case_count": 30,
     "release_profile": "INTERNAL_FULL",
     "asset_mode": "INTERNAL_REFERENCE_OR_GENERATED",
     "asset_generator_version": null,
@@ -40,6 +40,7 @@
       "case-65449b839105": "d6c08396458ad91473ffdb2354210af887dddb9f31a60152a0f762634b03e207",
       "case-d3a63b579b60": "515d0c708d4cfc0522daef917af0d7c05b93d54d0d41ed92b188c9aa871d447e",
       "case-ff03cf75659e": "cbda0b7231037872c00d2c67de9e4f1dc295701514bb7b6bc4f7f09bdb59e592",
+      "case-b1bd5683b57a": "5f6ad0ad6184cfae8d4306ef65cf592f41b66d0e6c3ad9a250d65b100cecc26c",
       "case-bcea2b291dd5": "957cf230e5c7a864f861121d5d8d6873e304e6988f1bd5fa47e6813f5dc93183"
     },
     "visibility": "local-editorial-preview-only",
@@ -166,8 +167,9 @@
       "case-4ede7f783a7ccfd3": "case-4ede7f783a7ccfd3-v-ee13796a0c2a",
       "case-65449b8391057437": "case-65449b8391057437-v-59913b1fb364",
       "case-d3a63b579b601b80": "case-d3a63b579b601b80-v-e151a62d9081",
+      "case-a6483fa8f15cdb49": "editorial-e09a5579ffbd4f19",
       "case-1ac4d4e7a3cf0e9a": "editorial-6205fd99751142a0",
-      "case-a6483fa8f15cdb49": "editorial-e09a5579ffbd4f19"
+      "case-702cf2b2336c1439": "editorial-fa2f861ae92a4f33"
     },
     "primary_collection": "Washington and Pacific Northwest",
     "external_collection": "Transferable Examples from Other Regions",
@@ -3114,6 +3116,73 @@
       "asset_variants": []
     },
     {
+      "title": "Organizational resilience in Puerto Rico's primary care clinics: absorbing, adapting, and transforming under stress",
+      "summary": "",
+      "location": "",
+      "region": "",
+      "hazards": [
+        "COMPOUND_MULTI_HAZARD"
+      ],
+      "themes": [
+        "GOVERNANCE_PLANNING"
+      ],
+      "climate_mechanism": "",
+      "adaptation_action": "",
+      "implementation_stage": "Planning and design",
+      "outcomes": [],
+      "transferability": "",
+      "limitations": "No measured outcome may be claimed unless the original source reports it.",
+      "last_source_checked_at": "",
+      "source_url": "https://www.frontiersin.org/journals/health-services/articles/10.3389/frhs.2026.1886937/full",
+      "image_url": "",
+      "image_attribution": "",
+      "image_focal_point": "center",
+      "lead_organization": "",
+      "partners": [
+        "Not yet recorded"
+      ],
+      "public_id": "case-b1bd5683b57a",
+      "slug": "case-b1bd5683b57a",
+      "collection": "Transferable Examples from Other Regions",
+      "reported_outcomes": [],
+      "region_tags": [
+        "UNITED_STATES_OTHER"
+      ],
+      "location_types": [
+        "REGIONAL"
+      ],
+      "geographic_scale": "REGIONAL",
+      "adaptation_strategies": [
+        "ASSESSMENT_PLANNING"
+      ],
+      "lead_organization_types": [
+        "MULTI_PARTNER"
+      ],
+      "partner_organization_types": [],
+      "public_copy_version": "public-copy-draft-v2",
+      "taxonomy_version": "case-taxonomy-v1",
+      "claim_status": "NOT_EVALUATED",
+      "preview_target": false,
+      "latitude": null,
+      "longitude": null,
+      "location_precision": "UNRESOLVED",
+      "coordinate_status": "NEEDS_LOCATION_REVIEW",
+      "primary_hazard": "OTHER_ADAPTATION",
+      "map_visible": true,
+      "hazard_label": "Other adaptation",
+      "hazard_color": "#7A8492",
+      "display_order": 28,
+      "asset_filename": "case-b1bd5683b57a-yakama-riparian.svg",
+      "asset_alt": "Illustration of a restored riparian landscape with native vegetation and water.",
+      "asset_attribution": "Local CAR-WASH generated illustration; not a documentary photograph.",
+      "asset_license": "PROJECT_GENERATED",
+      "asset_width": 1600,
+      "asset_height": 900,
+      "asset_focal_point": "center",
+      "asset_checksum": "82c691ee78c1c6df6126a422a14a597ae3a5244ba2d57e101508a8fe1a2850ed",
+      "asset_variants": []
+    },
+    {
       "title": "Wildfires Are The Earth Way Of Telling Us To Change Our Behavior Or Else",
       "hazards": [
         "WILDFIRE_SMOKE"
@@ -3163,15 +3232,15 @@
       "map_visible": true,
       "hazard_label": "Other adaptation",
       "hazard_color": "#7A8492",
-      "display_order": 28,
-      "asset_filename": "case-bcea2b291dd5-yakama-riparian.svg",
-      "asset_alt": "Illustration of a restored riparian landscape with native vegetation and water.",
+      "display_order": 29,
+      "asset_filename": "case-bcea2b291dd5-oasis-schoolyard.svg",
+      "asset_alt": "Illustration of a schoolyard cooling landscape with trees, shade, and permeable ground.",
       "asset_attribution": "Local CAR-WASH generated illustration; not a documentary photograph.",
       "asset_license": "PROJECT_GENERATED",
       "asset_width": 1600,
       "asset_height": 900,
       "asset_focal_point": "center",
-      "asset_checksum": "82c691ee78c1c6df6126a422a14a597ae3a5244ba2d57e101508a8fe1a2850ed",
+      "asset_checksum": "4436b7fa863e2c34dcea98fadb83a3b055d590d679c96119511df8fb8183531a",
       "asset_variants": []
     }
   ]
