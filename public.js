@@ -238,6 +238,15 @@ function createPublicSnapshotCheck({snapshotId, manifestUrl, fetchJson, currentU
     return `<div class="tags">${hazard ? `<span class="tag">${esc(label(hazard))}</span>` : ""}${theme ? `<span class="tag theme">${esc(label(theme))}</span>` : ""}</div>`;
   }
 
+  function photoFocalPosition(value) {
+    const named = {"center":"50% 50%","center center":"50% 50%","center top":"50% 0%","center bottom":"50% 100%","center 42%":"50% 42%"};
+    const raw = normalize(value);
+    if (named[raw]) return named[raw];
+    const match = raw.match(/^(\d{1,3}(?:\.\d+)?)% (\d{1,3}(?:\.\d+)?)%$/);
+    if (match && Number(match[1]) <= 100 && Number(match[2]) <= 100) return `${Number(match[1])}% ${Number(match[2])}%`;
+    return "50% 0%";
+  }
+
   function picture(item, {hero = false, eager = false} = {}) {
     const width = Number(item.asset_width || 960), height = Number(item.asset_height || 600);
     const variants = arr(item.asset_variants);
@@ -245,10 +254,11 @@ function createPublicSnapshotCheck({snapshotId, manifestUrl, fetchJson, currentU
     const jpeg = variants.filter(row => row.format === "jpeg").sort((a,b) => a.width - b.width);
     const fallback = jpeg.at(-1)?.filename ? assetPath(jpeg.at(-1).filename) : image(item);
     const fallbackWidth = jpeg.at(-1)?.width || width;
-    const fallbackHeight = hero ? Math.round(fallbackWidth * .625) : Math.round(fallbackWidth * .625);
+    const fallbackHeight = jpeg.at(-1)?.height || Math.round(fallbackWidth * height / width);
     const sizes = hero ? "(max-width: 1099px) 100vw, 65vw" : "(max-width: 719px) 100vw, (max-width: 1099px) 50vw, 25vw";
     const focalClass = normalize(item.asset_focal_point) === "center 42%" ? "focal-center-42" : "focal-center-top";
-    return `<picture>${source("avif") ? `<source type="image/avif" srcset="${source("avif")}" sizes="${sizes}">` : ""}${source("webp") ? `<source type="image/webp" srcset="${source("webp")}" sizes="${sizes}">` : ""}<img class="${focalClass}" src="${fallback}" ${source("jpeg") ? `srcset="${source("jpeg")}" sizes="${sizes}"` : ""} alt="${esc(item.asset_alt)}" width="${fallbackWidth}" height="${fallbackHeight}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></picture>`;
+    const focalPosition = photoFocalPosition(item.case_media?.focal_point || item.asset_focal_point);
+    return `<picture>${source("avif") ? `<source type="image/avif" srcset="${source("avif")}" sizes="${sizes}">` : ""}${source("webp") ? `<source type="image/webp" srcset="${source("webp")}" sizes="${sizes}">` : ""}<img class="${focalClass}" style="object-position:${focalPosition}" src="${fallback}" ${source("jpeg") ? `srcset="${source("jpeg")}" sizes="${sizes}"` : ""} alt="${esc(item.asset_alt)}" width="${fallbackWidth}" height="${fallbackHeight}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></picture>`;
   }
 
   function card(item) {
