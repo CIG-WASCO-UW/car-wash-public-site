@@ -1,13 +1,13 @@
 {
   "meta": {
-    "snapshot_id": "staging-20261019T182849-e5909908",
-    "previous_snapshot_id": "staging-20261005T194201-f73ad3fd",
+    "snapshot_id": "staging-20261019T183325-349ddb2a",
+    "previous_snapshot_id": "staging-20261019T182849-e5909908",
     "dataset_version": "car-wash-v3-7-3",
     "product_version": "3.7.3",
     "public_ui_fingerprint": "303235efa15028cb9f95b2248a03ca436b0394004608461077bbfb46881d87a9",
-    "created_at": "2026-10-19T18:28:49.663951+00:00",
-    "activated_at": "2026-10-19T18:28:49.663951+00:00",
-    "case_count": 31,
+    "created_at": "2026-10-19T18:33:25.669130+00:00",
+    "activated_at": "2026-10-19T18:33:25.669130+00:00",
+    "case_count": 32,
     "release_profile": "INTERNAL_FULL",
     "asset_mode": "INTERNAL_REFERENCE_OR_GENERATED",
     "asset_generator_version": null,
@@ -42,6 +42,7 @@
       "case-b50247c686a4": "44596d5da021cabf1fee887ffb451a84fe5773ebc1ec79d067a926a0fb44e03a",
       "case-ff03cf75659e": "cbda0b7231037872c00d2c67de9e4f1dc295701514bb7b6bc4f7f09bdb59e592",
       "case-b1bd5683b57a": "5f6ad0ad6184cfae8d4306ef65cf592f41b66d0e6c3ad9a250d65b100cecc26c",
+      "case-18c5f68016a2": "bd4a6479da19847d83390ea4bb990110f30b82c760326800690575719c18ea33",
       "case-bcea2b291dd5": "957cf230e5c7a864f861121d5d8d6873e304e6988f1bd5fa47e6813f5dc93183"
     },
     "visibility": "local-editorial-preview-only",
@@ -168,10 +169,11 @@
       "case-4ede7f783a7ccfd3": "case-4ede7f783a7ccfd3-v-ee13796a0c2a",
       "case-65449b8391057437": "case-65449b8391057437-v-59913b1fb364",
       "case-d3a63b579b601b80": "case-d3a63b579b601b80-v-e151a62d9081",
+      "case-6618dffab7cf89c0": "editorial-55c17301b9c64661",
       "case-702cf2b2336c1439": "editorial-fa2f861ae92a4f33",
       "case-a6483fa8f15cdb49": "editorial-e09a5579ffbd4f19",
       "case-1ac4d4e7a3cf0e9a": "editorial-6205fd99751142a0",
-      "case-6618dffab7cf89c0": "editorial-55c17301b9c64661"
+      "case-009448c9644bb9a1": "editorial-bc49571ad7284bbe"
     },
     "primary_collection": "Washington and Pacific Northwest",
     "external_collection": "Transferable Examples from Other Regions",
@@ -3252,6 +3254,73 @@
       "asset_variants": []
     },
     {
+      "title": "Rescission of Conservation and Landscape Health Rule",
+      "summary": "",
+      "location": "",
+      "region": "",
+      "hazards": [
+        "COMPOUND_MULTI_HAZARD"
+      ],
+      "themes": [
+        "PUBLIC_HEALTH"
+      ],
+      "climate_mechanism": "",
+      "adaptation_action": "",
+      "implementation_stage": "Planning and design",
+      "outcomes": [],
+      "transferability": "",
+      "limitations": "No measured outcome may be claimed unless the original source reports it.",
+      "last_source_checked_at": "",
+      "source_url": "https://unblock.federalregister.gov/",
+      "image_url": "",
+      "image_attribution": "",
+      "image_focal_point": "center",
+      "lead_organization": "",
+      "partners": [
+        "Not yet recorded"
+      ],
+      "public_id": "case-18c5f68016a2",
+      "slug": "case-18c5f68016a2",
+      "collection": "Transferable Examples from Other Regions",
+      "reported_outcomes": [],
+      "region_tags": [
+        "UNITED_STATES_OTHER"
+      ],
+      "location_types": [
+        "REGIONAL"
+      ],
+      "geographic_scale": "REGIONAL",
+      "adaptation_strategies": [
+        "ASSESSMENT_PLANNING"
+      ],
+      "lead_organization_types": [
+        "MULTI_PARTNER"
+      ],
+      "partner_organization_types": [],
+      "public_copy_version": "public-copy-draft-v2",
+      "taxonomy_version": "case-taxonomy-v1",
+      "claim_status": "NOT_EVALUATED",
+      "preview_target": false,
+      "latitude": null,
+      "longitude": null,
+      "location_precision": "UNRESOLVED",
+      "coordinate_status": "NEEDS_LOCATION_REVIEW",
+      "primary_hazard": "OTHER_ADAPTATION",
+      "map_visible": true,
+      "hazard_label": "Other adaptation",
+      "hazard_color": "#7A8492",
+      "display_order": 30,
+      "asset_filename": "case-18c5f68016a2-powell-shoreline.svg",
+      "asset_alt": "Illustration of a restored shoreline with planted edge protection and waves.",
+      "asset_attribution": "Local CAR-WASH generated illustration; not a documentary photograph.",
+      "asset_license": "PROJECT_GENERATED",
+      "asset_width": 1600,
+      "asset_height": 900,
+      "asset_focal_point": "center",
+      "asset_checksum": "d5cd8e22cd958beef193ab0a8c2df65c4c34cd71e337c693b1acd065317f7d25",
+      "asset_variants": []
+    },
+    {
       "title": "Wildfires Are The Earth Way Of Telling Us To Change Our Behavior Or Else",
       "hazards": [
         "WILDFIRE_SMOKE"
@@ -3301,15 +3370,15 @@
       "map_visible": true,
       "hazard_label": "Other adaptation",
       "hazard_color": "#7A8492",
-      "display_order": 30,
-      "asset_filename": "case-bcea2b291dd5-powell-shoreline.svg",
-      "asset_alt": "Illustration of a restored shoreline with planted edge protection and waves.",
+      "display_order": 31,
+      "asset_filename": "case-bcea2b291dd5-portland-depaving.svg",
+      "asset_alt": "Illustration of a depaved neighborhood street with trees and rain gardens.",
       "asset_attribution": "Local CAR-WASH generated illustration; not a documentary photograph.",
       "asset_license": "PROJECT_GENERATED",
       "asset_width": 1600,
       "asset_height": 900,
       "asset_focal_point": "center",
-      "asset_checksum": "d5cd8e22cd958beef193ab0a8c2df65c4c34cd71e337c693b1acd065317f7d25",
+      "asset_checksum": "f2f1dcffb6615ef795a175ee9a9e3ecb18748ab829b7c49c475dd701fd2cee0a",
       "asset_variants": []
     }
   ]
